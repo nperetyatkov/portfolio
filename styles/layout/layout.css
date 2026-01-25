@@ -1,0 +1,46 @@
+/* ============================= */
+/* Layout                         */
+/* ============================= */
+
+.container {
+  width: var(--content-desktop);
+  margin: 0 auto;
+}
+
+section {
+  padding: 160px 0;
+}
+
+section > * {
+  width: var(--content-desktop);
+  margin: 0 auto;
+}
+
+/* ============================= */
+/* Adaptive Padding              */
+/* ============================= */
+
+@media (max-width: 1279px) {
+  .container {
+    width: var(--content-tablet);
+  }
+
+  section > * {
+    width: var(--content-tablet);
+  }
+}
+
+/* ============================= */
+/* Mobile                         */
+/* ============================= */
+
+@media (max-width: 799px) {
+  .container {
+    max-width: var(--content-mobile);
+    width: 100%;
+  }
+
+  section > * {
+    width: var(--content-mobile);
+  }
+}

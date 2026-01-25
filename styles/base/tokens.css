@@ -1,0 +1,52 @@
+/* ============================= */
+/* Design Tokens                 */
+/* ============================= */
+
+:root {
+  /* Fonts */
+  --font-family-base: 'Inter', sans-serif;
+
+  /* Font sizes */
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-32: 32px;
+  --fs-56: 56px;
+
+  /* Font weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* Line heights */
+  --lh-tight: 1.1;
+  --lh-base: 1.6;
+
+  /* Colors — primitives */
+  --color-black: #111111;
+  --color-white: #ffffff;
+
+  /* Colors — semantic */
+  --color-text-primary: var(--color-black);
+  --color-bg-primary: var(--color-white);
+
+  /* Spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-24: 24px;
+
+  /* Motion */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-medium: 250ms;
+
+  /* Layout */
+  --content-desktop: 1040px;
+  --header-desktop: 1008px;
+
+  --content-tablet: 680px;
+  --header-tablet: 648px;
+
+  --content-mobile: 335px;
+  --header-mobile: 319px;
+}

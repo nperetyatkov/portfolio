@@ -1,0 +1,51 @@
+/* ============================= */
+/* Header                         */
+/* ============================= */
+
+.header {
+  position: fixed;
+  top: 16px;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  padding-inline: 16px;
+}
+
+.header-inner {
+  width: var(--header-desktop);
+  margin: 0 auto;
+  padding: var(--space-12);
+  padding-inline: var(--space-12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  border-radius: 999px;
+}
+
+/* ============================= */
+/* Adaptive Padding              */
+/* ============================= */
+
+@media (max-width: 1279px) {
+  .header-inner {
+    width: var(--header-tablet);
+  }
+}
+
+/* ============================= */
+/* Mobile                         */
+/* ============================= */
+
+@media (max-width: 799px) {
+  .header-inner {
+    width: var(--header-mobile);
+    margin: 0 auto;
+    padding: var(--space-12);
+  }
+}

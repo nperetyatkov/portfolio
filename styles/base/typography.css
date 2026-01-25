@@ -1,0 +1,19 @@
+/* ============================= */
+/* Typography                     */
+/* ============================= */
+
+h1 {
+  font-size: var(--fs-56);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-24);
+}
+
+h2 {
+  font-size: var(--fs-32);
+  margin-bottom: var(--space-12);
+}
+
+p {
+  font-size: var(--fs-16);
+  line-height: var(--lh-base);
+}

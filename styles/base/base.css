@@ -1,0 +1,31 @@
+/* ============================= */
+/* Base                           */
+/* ============================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--fs-16);
+  line-height: var(--lh-base);
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+}
+
+body.menu-open {
+  overflow: hidden;
+  padding-right: var(--scrollbar-width, 0px);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:focus,
+a:focus-visible {
+  outline: none;
+}
