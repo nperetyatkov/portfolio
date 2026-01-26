@@ -6,6 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html.is-loading body {
+  opacity: 0;
+}
+
 body {
   margin: 0;
   font-family: var(--font-family-base);

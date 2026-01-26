@@ -1,5 +1,6 @@
 import { initMobileMenu } from './components/mobile-menu.js';
 
-document.documentElement.classList.remove('is-loading');
-
-initMobileMenu();
+document.addEventListener('DOMContentLoaded', () => {
+  document.documentElement.classList.remove('is-loading');
+  initMobileMenu();
+});
