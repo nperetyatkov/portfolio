@@ -150,8 +150,39 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
+
+  margin-top: 20px;
 }
 
 .mobile-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+
   font-size: var(--fs-16);
+  color: var(--color-text-primary);
+
+  transition:
+    opacity var(--duration-fast) var(--ease-default),
+    transform var(--duration-fast) var(--ease-default);
+
+  will-change: opacity, transform;
+}
+
+.mobile-nav a:active {
+  opacity: 0.5;
+  transform: translateY(1px);
+}
+
+/* ============================= */
+/* Mobile resume link            */
+/* ============================= */
+
+.mobile-resume {
+  font-weight: var(--fw-semibold);
+}
+
+.mobile-resume .resume-icon {
+  width: 18px;
+  height: 18px;
 }
