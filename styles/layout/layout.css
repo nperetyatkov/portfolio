@@ -12,7 +12,6 @@ section {
 }
 
 section > * {
-  width: var(--content-desktop);
   margin: 0 auto;
 }
 
@@ -22,10 +21,6 @@ section > * {
 
 @media (max-width: 1279px) {
   .container {
-    width: var(--content-tablet);
-  }
-
-  section > * {
     width: var(--content-tablet);
   }
 }
@@ -40,7 +35,7 @@ section > * {
     width: 100%;
   }
 
-  section > * {
-    width: var(--content-mobile);
+  :root {
+    --radius-soft: 20px;
   }
 }

@@ -7,3 +7,5 @@
 
 @import "./components/brand.css";
 @import "./components/menu.css";
+
+@import "./pages/home.css";

@@ -49,4 +49,7 @@
 
   --content-mobile: 335px;
   --header-mobile: 319px;
+
+  /* Radius */
+  --radius-soft: 32px;
 }

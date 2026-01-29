@@ -1,19 +1,36 @@
 /* ============================= */
-/* Typography                     */
+/* Typography (base)             */
 /* ============================= */
 
+/* Headings — for content sections */
 h1 {
-  font-size: var(--fs-56);
+  font-size: var(--fs-48);
   line-height: var(--lh-tight);
-  margin-bottom: var(--space-24);
+  margin: 0 0 var(--space-24);
 }
 
 h2 {
   font-size: var(--fs-32);
-  margin-bottom: var(--space-12);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--space-16);
 }
 
+h3 {
+  font-size: var(--fs-24);
+  line-height: var(--lh-snug);
+  margin: 0 0 var(--space-12);
+}
+
+/* Body text */
 p {
   font-size: var(--fs-16);
   line-height: var(--lh-base);
+  margin: 0 0 var(--space-16);
+}
+
+/* Secondary / meta text */
+.small {
+  font-size: var(--fs-14);
+  line-height: var(--lh-base);
+  color: var(--color-text-secondary);
 }
