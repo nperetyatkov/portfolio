@@ -22,12 +22,17 @@
   --lh-base: 1.6;
 
   /* Colors — primitives */
-  --color-black: #111111;
+  --color-black: #1a1a1a;
   --color-white: #ffffff;
+  --color-gray-600: #6b6b6b;
+  --color-gray-500: #8a8a8a;
 
   /* Colors — semantic */
-  --color-text-primary: var(--color-black);
   --color-bg-primary: var(--color-white);
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-muted: var(--color-gray-500);
+
 
   /* Spacing */
   --space-4: 4px;

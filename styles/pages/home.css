@@ -3,8 +3,6 @@
 /* ============================= */
 
 .hero {
-  --hero-black: #111111;
-  --hero-gray: #6b6b6b;
   padding: 120px 0;
 }
 
@@ -50,7 +48,7 @@
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.04em;
-  color: var(--hero-gray);
+  color: var(--color-text-secondary);
 }
 .hero-greeting .wave {
   display: inline-block;
@@ -65,7 +63,7 @@
   line-height: 1.05;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--hero-black);
+  color: var(--color-text-primary);
   margin-left: -2px;
 }
 
@@ -74,7 +72,7 @@
   margin-top: 32px;
   font-size: 44px;
   font-weight: 500;
-  color: var(--hero-gray);
+  color: var(--color-text-secondary);
   letter-spacing: -0.015em;
 }
 
@@ -167,4 +165,33 @@
     margin-top: 16px;
     font-size: 28px;
   }
+}
+
+/* ============================= */
+/* About section                 */
+/* ============================= */
+
+.about {
+  padding: 120px 0;
+}
+
+
+.about-title {
+  margin: 0 0 40px;
+  font-size: 56px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text-muted);
+}
+
+.about-text p {
+  margin: 0 0 20px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
 }
