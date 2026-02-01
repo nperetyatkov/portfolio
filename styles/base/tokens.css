@@ -7,9 +7,16 @@
   --font-family-base: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* Font sizes */
+  --fs-12: 12px;
+  --fs-14: 14px;
+  --fs-15: 15px;
   --fs-16: 16px;
   --fs-18: 18px;
+  --fs-20: 20px;
+  --fs-22: 22px;
   --fs-32: 32px;
+  --fs-40: 40px;
+  --fs-48: 48px;
   --fs-56: 56px;
 
   /* Font weights */
@@ -20,6 +27,7 @@
 
   /* Line heights */
   --lh-tight: 1.1;
+  --lh-snug: 1.3;
   --lh-base: 1.5;
 
   /* Letter spacing */
@@ -65,4 +73,5 @@
 
   /* Radius */
   --radius-soft: 32px;
+
 }

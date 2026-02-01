@@ -32,6 +32,10 @@
     width: 100%;
   }
 
+  .section {
+  padding-top: 24px;
+  }
+  
   :root {
     --radius-soft: 20px;
   }
