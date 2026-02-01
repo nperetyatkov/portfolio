@@ -10,20 +10,22 @@
 }
 
 .nav-link {
+  color: var(--color-text-secondary);
+
   transition:
-    opacity var(--duration-fast) var(--ease-default),
+    color var(--duration-fast) var(--ease-default),
     transform var(--duration-fast) var(--ease-default);
 
-  will-change: transform, opacity;
+  will-change: color, transform;
 }
 
 .nav-link:hover {
-  opacity: 0.7;
+  color: var(--color-text-primary);
 }
 
 .nav-link:active {
+  color: var(--color-text-primary);
   transform: translateY(1px);
-  opacity: 0.5;
 }
 
 .nav-resume {
@@ -34,22 +36,14 @@
 
   font-weight: var(--fw-semibold);
   color: var(--color-text-primary);
-  opacity: 1;
-  transform: translateY(0);
 
   transition:
-    opacity var(--duration-fast) var(--ease-default),
     transform var(--duration-fast) var(--ease-default);
 
-  will-change: opacity, transform;
-}
-
-.nav-resume:hover {
-  opacity: 0.7;
+  will-change: transform;
 }
 
 .nav-resume:active {
-  opacity: 0.5;
   transform: translateY(1px);
 }
 
@@ -90,15 +84,11 @@
   flex-direction: column;
   justify-content: space-between;
 
-  transition: opacity var(--duration-fast) var(--ease-default);
-}
-
-.burger:hover {
-  opacity: 0.7;
+  transition: transform var(--duration-fast) var(--ease-default);
 }
 
 .burger:active {
-  opacity: 0.5;
+  transform: translateY(1px);
 }
 
 .burger span {
@@ -160,17 +150,21 @@
   gap: var(--space-4);
 
   font-size: var(--fs-16);
-  color: var(--color-text-primary);
+  color: var(--color-text-secondary);
 
   transition:
-    opacity var(--duration-fast) var(--ease-default),
+    color var(--duration-fast) var(--ease-default),
     transform var(--duration-fast) var(--ease-default);
 
-  will-change: opacity, transform;
+  will-change: color, transform;
+}
+
+.mobile-nav a:hover {
+  color: var(--color-text-primary);
 }
 
 .mobile-nav a:active {
-  opacity: 0.5;
+  color: var(--color-text-primary);
   transform: translateY(1px);
 }
 
@@ -178,8 +172,9 @@
 /* Mobile resume link            */
 /* ============================= */
 
-.mobile-resume {
+.mobile-nav .mobile-resume {
   font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
 }
 
 .mobile-resume .resume-icon {

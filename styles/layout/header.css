@@ -83,5 +83,6 @@ body.menu-open .mobile-menu {
     width: var(--header-mobile);
     margin: 0 auto;
     padding: var(--space-12);
+    border-radius: 28px;
   }
 }

@@ -9,19 +9,13 @@
   color: inherit;
 
   transition:
-    transform var(--duration-fast) var(--ease-default),
-    opacity var(--duration-fast) var(--ease-default);
+    transform var(--duration-fast) var(--ease-default);
 
-  will-change: transform, opacity;
-}
-
-.brand-link:hover {
-  opacity: 0.7;
+  will-change: transform;
 }
 
 .brand-link:active {
   transform: translateY(1px);
-  opacity: 0.5;
 }
 
 .avatar {
