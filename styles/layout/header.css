@@ -27,7 +27,7 @@
   backdrop-filter: blur(10px) saturate(120%);
   -webkit-backdrop-filter: blur(10px) saturate(120%);
 
-  border-radius: 24px;
+  border-radius: 100px;
   overflow: hidden;
 }
 

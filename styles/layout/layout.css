@@ -7,12 +7,9 @@
   margin: 0 auto;
 }
 
-section {
-  padding: 160px 0;
-}
-
-section > * {
-  margin: 0 auto;
+.section {
+  padding-top: 40px;
+  scroll-margin-top: 64px;
 }
 
 /* ============================= */

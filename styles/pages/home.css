@@ -3,7 +3,8 @@
 /* ============================= */
 
 .hero {
-  padding: 120px 0;
+  padding-top: 120px;
+  padding-bottom: 64px;
 }
 
 .hero > .container {
@@ -165,33 +166,4 @@
     margin-top: 16px;
     font-size: 28px;
   }
-}
-
-/* ============================= */
-/* About section                 */
-/* ============================= */
-
-.about {
-  padding: 120px 0;
-}
-
-
-.about-title {
-  margin: 0 0 40px;
-  font-size: 56px;
-  line-height: 1.1;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--color-text-muted);
-}
-
-.about-text p {
-  margin: 0 0 20px;
-  font-size: 18px;
-  line-height: 1.5;
-  color: var(--text-primary);
-}
-
-.about-text p:last-child {
-  margin-bottom: 0;
 }
