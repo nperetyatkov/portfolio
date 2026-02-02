@@ -5,12 +5,13 @@
 .header {
   position: fixed;
   top: 16px;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--header-desktop);
   z-index: 100;
   display: flex;
   justify-content: center;
-  padding-inline: 16px;
+  padding-inline: 0;
 }
 
 .header-inner {
@@ -69,8 +70,12 @@ body.menu-open .mobile-menu {
 /* ============================= */
 
 @media (max-width: 1279px) {
-  .header-inner {
+  .header {
     width: var(--header-tablet);
+  }
+
+  .header-inner {
+    width: 100%;
   }
 }
 

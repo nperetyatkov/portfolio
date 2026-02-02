@@ -168,3 +168,21 @@
     font-size: 28px;
   }
 }
+
+/* ============================= */
+/* Portfolio section             */
+/* ============================= */
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin-top: 64px;
+}
+
+@media (max-width: 799px) {
+  .portfolio {
+    gap: 40px;
+    margin-top: 40px;
+  }
+}
