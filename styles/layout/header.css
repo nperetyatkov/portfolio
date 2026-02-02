@@ -79,9 +79,16 @@ body.menu-open .mobile-menu {
 /* ============================= */
 
 @media (max-width: 799px) {
-  .header-inner {
+  .header {
+    left: 50%;
+    transform: translateX(-50%);
     width: var(--header-mobile);
-    margin: 0 auto;
+    padding-inline: 0;
+  }
+
+  .header-inner {
+    width: 100%;
+    margin: 0;
     padding: var(--space-12);
     border-radius: 28px;
   }
