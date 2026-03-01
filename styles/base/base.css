@@ -2,10 +2,6 @@
 /* Base                           */
 /* ============================= */
 
-html {
-  scroll-behavior: smooth;
-}
-
 html.is-loading body {
   opacity: 0;
 }

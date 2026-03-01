@@ -8,5 +8,6 @@
 @import "./components/brand.css";
 @import "./components/menu.css";
 @import "./components/project-card.css";
+@import "./components/cursor.css";
 
 @import "./pages/home.css";
