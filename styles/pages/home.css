@@ -176,13 +176,140 @@
 .portfolio {
   display: flex;
   flex-direction: column;
-  gap: 64px;
-  margin-top: 64px;
+  gap: 24px;
+  margin-top: var(--space-32);
 }
 
 @media (max-width: 799px) {
   .portfolio {
-    gap: 40px;
-    margin-top: 40px;
+    gap: 16px;
+    margin-top: var(--space-24);
   }
+}
+
+/* ============================= */
+/* Contact section               */
+/* ============================= */
+
+.contact {
+  padding-bottom: 80px;
+}
+
+.contact-layout {
+  margin-top: 8px;
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.contact-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 110px;
+  padding: 20px;
+  border-radius: 18px;
+  background-color: #f5f5f5;
+  transition:
+    transform 620ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 240ms var(--ease-default);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.contact-link-head {
+  margin: 0;
+  font-size: var(--fs-40);
+  line-height: var(--lh-tight);
+}
+
+.contact-link-value {
+  margin: 0;
+  font-weight: var(--fw-regular);
+  text-align: center;
+}
+
+.contact-link-value--hover {
+  display: none;
+  font-weight: var(--fw-semibold);
+}
+
+.contact-link-value--copied {
+  display: none;
+  font-weight: var(--fw-semibold);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .contact-link:hover {
+    transform: scale(1.018);
+    background-color: #efefef;
+  }
+
+  .contact-link:hover .contact-link-value--default {
+    display: none;
+  }
+
+  .contact-link:hover .contact-link-value--hover {
+    display: block;
+  }
+
+  .contact-link-phone.is-copied .contact-link-value--default,
+  .contact-link-phone.is-copied .contact-link-value--hover {
+    display: none;
+  }
+
+  .contact-link-phone.is-copied .contact-link-value--copied {
+    display: block;
+  }
+
+}
+
+.contact-link:active {
+  transition-duration: 180ms;
+  transition-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
+  transform: scale(0.992);
+}
+
+@media (max-width: 1279px) {
+  .contact {
+    padding-bottom: 64px;
+  }
+
+  .contact-link-head {
+    font-size: var(--fs-32);
+    line-height: var(--lh-snug);
+  }
+
+  .contact-link {
+    min-height: 96px;
+  }
+
+}
+
+@media (max-width: 799px) {
+  .contact {
+    padding-bottom: 48px;
+  }
+
+  .contact-layout {
+    gap: 20px;
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .contact-link {
+    min-height: 96px;
+    padding: 16px;
+    border-radius: 14px;
+    gap: 8px;
+  }
+
 }

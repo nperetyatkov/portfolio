@@ -4,6 +4,7 @@
 
 @import "./layout/layout.css";
 @import "./layout/header.css";
+@import "./layout/footer.css";
 
 @import "./components/brand.css";
 @import "./components/menu.css";

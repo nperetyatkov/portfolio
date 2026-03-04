@@ -25,7 +25,10 @@ a {
   color: inherit;
 }
 
-a:focus,
-a:focus-visible {
-  outline: none;
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 6px;
 }

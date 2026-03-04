@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 
-<body>
+<body id="top">
 
   <header class="header">
     <div class="header-inner">
@@ -121,15 +121,15 @@
         </div>
 
         <div class="hero-text-wrap">
-          <h1 class="hero-greeting">
+          <p class="hero-greeting">
             Привет!
             <span class="wave" aria-hidden="true">👋</span>
-          </h1>
+          </p>
 
-          <h2 class="hero-title">
+          <h1 class="hero-title">
             Меня зовут Николай<br />
             <span>Product Designer</span>
-          </h2>
+          </h1>
         </div>
       </div>
     </div>
@@ -141,18 +141,30 @@
 
       <div>
         <p>
-          Несколько лет я работал инженером на крупных проектах — этот опыт
-          сформировал системное мышление, внимание к деталям и&nbsp;привычку работать
-          со сложными продуктами.
+          Я продуктовый UX/UI-дизайнер с инженерным бэкграундом.
+          Проектирую интерфейсы как системы: продумываю сценарии, структуру
+          и визуальную иерархию.
         </p>
 
         <p>
-          Визуальное мышление пришло ко мне через фотографию — она научила видеть
-          композицию, детали и цвета.
+          Инженерный опыт помогает принимать рациональные решения, а занятия
+          фотографией сформировали внимание к визуальному балансу и деталям
+          интерфейса. Портфолио фотографа
+          <a
+            href="https://nickframer.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          ><strong>здесь</strong></a>.
         </p>
 
         <p>
-          Мне важно, чтобы продукт был красивым, понятным и удобным в использовании.
+          Понимаю логику разработки (HTML, CSS, Python) и проектирую решения,
+          удобные для реализации.
+        </p>
+
+        <p>
+          Интересны продуктовые задачи, где дизайн помогает улучшать
+          пользовательский опыт и достигать бизнес-целей.
         </p>
 
         <p>
@@ -196,21 +208,138 @@
 
         </a>
       </article>
+
+      <article class="project-card">
+        <a href="#" class="project-card-link">
+
+          <div class="project-card-media">
+            <img
+              src="assets/images/pages/home/project-mosru.png"
+              alt="Проект Mos.ru"
+              width="800"
+              height="600"
+            />
+          </div>
+
+          <div class="project-card-content">
+            <div class="project-card-tags">
+              <span class="project-tag">UX/UI</span>
+              <span class="project-tag">Cross-platform</span>
+            </div>
+
+            <h3 class="project-card-title">
+              Mos.ru
+            </h3>
+
+            <p class="project-card-description">
+              Форма для сбора контактной информации
+            </p>
+          </div>
+
+        </a>
+      </article>
+
+      <article class="project-card">
+        <a href="#" class="project-card-link">
+
+          <div class="project-card-media">
+            <img
+              src="assets/images/pages/home/project-start.png"
+              alt="Проект START"
+              width="800"
+              height="600"
+            />
+          </div>
+
+          <div class="project-card-content">
+            <div class="project-card-tags">
+              <span class="project-tag">UX/UI</span>
+              <span class="project-tag">Desktop</span>
+            </div>
+
+            <h3 class="project-card-title">
+              START
+            </h3>
+
+            <p class="project-card-description">
+              Семейная подписка в онлайн кинотеатре
+            </p>
+          </div>
+
+        </a>
+      </article>
     </div>
 
   </div>
 </section>
 
-  <section id="contact" class="section">
+  <section id="contact" class="section contact">
     <div class="container">
       <h2>Контакты</h2>
-      <p>
-        Telegram, Email, телефон
-      </p>
+
+      <div class="contact-layout">
+        <div class="contact-card" aria-label="Каналы связи">
+          <a href="mailto:nperetyatkov@mail.ru" class="contact-link contact-link--primary">
+            <p class="contact-link-head" aria-hidden="true">✉️</p>
+            <p class="contact-link-value contact-link-value--default">nperetyatkov@mail.ru</p>
+            <p class="contact-link-value contact-link-value--hover">Написать на почту</p>
+          </a>
+
+          <a href="https://t.me/ptv_on" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <p class="contact-link-head" aria-hidden="true">🛒</p>
+            <p class="contact-link-value contact-link-value--default">@ptv_on</p>
+            <p class="contact-link-value contact-link-value--hover">Написать в Телеграм</p>
+          </a>
+
+          <a href="tel:+79851164687" class="contact-link contact-link-phone" data-phone="+7 (985) 116-46-87">
+            <p class="contact-link-head" aria-hidden="true">📞</p>
+            <p class="contact-link-value contact-link-value--default">+7 (985) 116-46-87</p>
+            <p class="contact-link-value contact-link-value--hover">Скопировать номер</p>
+            <p class="contact-link-value contact-link-value--copied">Номер скопирован</p>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
 </main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-shell">
+      <div class="footer-grid">
+        <div class="footer-left">
+          <p class="footer-copy">© Николай Перетятков, 2026</p>
+          <p class="footer-role">Продуктовый UX/UI-дизайнер, Москва</p>
+        </div>
+
+        <div class="footer-right">
+          <a href="#" class="nav-resume footer-resume">
+            Резюме
+            <svg
+              class="resume-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              width="18"
+              height="18"
+              aria-hidden="true"
+            >
+              <path
+                d="M7 17L17 7M17 7H9M17 7V15"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+
+          <p class="footer-note">Сайт сделан с помощью вайб-кодинга</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
   <div class="cursor" aria-hidden="true"></div>
 <script type="module" src="scripts/main.js"></script>

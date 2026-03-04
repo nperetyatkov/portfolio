@@ -30,4 +30,35 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  const phoneContactLink = document.querySelector('.contact-link-phone');
+  if (phoneContactLink) {
+    let copiedStateTimeoutId = null;
+
+    phoneContactLink.addEventListener('click', async (e) => {
+      const isDesktopOrTablet = window.matchMedia('(min-width: 800px)').matches;
+      if (!isDesktopOrTablet) return;
+
+      e.preventDefault();
+
+      const phoneValue = phoneContactLink.dataset.phone;
+      if (!phoneValue || !navigator.clipboard) return;
+
+      try {
+        await navigator.clipboard.writeText(phoneValue);
+        phoneContactLink.classList.add('is-copied');
+
+        if (copiedStateTimeoutId) {
+          clearTimeout(copiedStateTimeoutId);
+        }
+
+        copiedStateTimeoutId = window.setTimeout(() => {
+          phoneContactLink.classList.remove('is-copied');
+          copiedStateTimeoutId = null;
+        }, 1200);
+      } catch (error) {
+        console.error('Failed to copy phone number:', error);
+      }
+    });
+  }
 });
