@@ -34,7 +34,7 @@ export function initCursor() {
     cursor.classList.remove("cursor--press");
   });
 
-  const interactiveElements = document.querySelectorAll("a, button");
+  const interactiveElements = document.querySelectorAll("a, button, [role='button']");
 
   interactiveElements.forEach((el) => {
     el.addEventListener("mouseenter", () => {
@@ -42,6 +42,7 @@ export function initCursor() {
     });
 
     el.addEventListener("mouseleave", () => {
+      if (document.body.classList.contains("image-viewer-open")) return;
       cursor.classList.remove("cursor--hover");
     });
   });

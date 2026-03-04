@@ -1,0 +1,340 @@
+.project-page .project-hero {
+  padding-top: 120px;
+  padding-bottom: var(--space-40);
+}
+
+.project-page .project-hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.project-page .project-hero-media {
+  background: #f5f5f5;
+  border-radius: 24px;
+  padding: 12px 12px 0;
+  min-height: 432px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project-page .project-hero-media img {
+  width: min(560px, 92%);
+  height: auto;
+  object-fit: contain;
+  object-position: center bottom;
+  margin-top: auto;
+  margin-bottom: 0;
+  display: block;
+}
+
+.project-page .project-hero-content {
+  background: #f5f5f5;
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.project-page .project-hero-tags {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  display: flex;
+  gap: 12px;
+}
+
+.project-page .project-hero-title {
+  margin: 0;
+  font-size: 64px;
+  line-height: 1;
+}
+
+.project-page .project-hero-description {
+  margin: var(--space-12) 0 0;
+  max-width: 40ch;
+}
+
+.project-page .project-section {
+  padding-top: var(--space-40);
+}
+
+.project-page .project-section h2 {
+  margin-bottom: var(--space-24);
+}
+
+.project-page .project-section-last {
+  padding-bottom: 72px;
+}
+
+.project-page .project-lead {
+  margin: 0 0 var(--space-24);
+  max-width: 78ch;
+}
+
+.project-page .project-section > .container > :last-child {
+  margin-bottom: 0;
+}
+
+.project-page .project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.project-page .project-flow {
+  display: grid;
+  gap: var(--space-32);
+}
+
+.project-page .project-detail {
+  padding: 0;
+}
+
+.project-page .project-detail h3 {
+  margin: 0 0 var(--space-12);
+  font-size: var(--fs-24);
+}
+
+.project-page .project-detail p:last-child {
+  margin-bottom: 0;
+}
+
+.project-page .project-detail ul {
+  margin: 0 0 14px 1.2em;
+  padding: 0;
+}
+
+.project-page .project-detail li {
+  margin-bottom: 6px;
+}
+
+.project-page .project-inline-link {
+  text-decoration: none;
+  font-weight: var(--fw-bold);
+}
+
+.project-page .project-section--about .project-detail {
+  border-radius: 18px;
+  background: #f5f5f5;
+  padding: 22px;
+}
+
+.project-page .project-image-block {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f5f5f5;
+  margin-top: var(--space-16);
+}
+
+.project-page .project-image-block img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1279px) {
+  .project-page .project-hero-title {
+    font-size: 52px;
+  }
+
+  .project-page .project-hero-media {
+    padding: 8px 12px 0;
+    min-height: 280px;
+  }
+
+  .project-page .project-hero-content {
+    padding: 28px 24px 24px;
+    min-height: 280px;
+  }
+
+  .project-page .project-hero-media img {
+    width: min(430px, 96%);
+    height: auto;
+    object-fit: contain;
+    object-position: center bottom;
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 799px) {
+  .project-page .project-hero {
+    padding-top: 96px;
+    padding-bottom: var(--space-24);
+  }
+
+  .project-page .project-hero-layout {
+    position: relative;
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-height: 360px;
+    border-radius: 18px;
+    background: #f5f5f5;
+    overflow: hidden;
+  }
+
+  .project-page .project-hero-media {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: -111px;
+    height: 287px;
+    min-height: 0;
+    padding: 0;
+    border-radius: 0;
+    background: none;
+    overflow: visible;
+    order: 0;
+  }
+
+  .project-page .project-hero-content {
+    min-height: 0;
+    padding: 84px 18px 0;
+    border-radius: 0;
+    background: none;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    order: 0;
+    z-index: 1;
+  }
+
+  .project-page .project-hero-tags {
+    top: 28px;
+    right: 28px;
+    gap: 18px;
+  }
+
+  .project-page .project-hero-title {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .project-page .project-hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: top center;
+    margin: 0;
+  }
+
+  .project-page .project-hero-description {
+    margin: 0;
+  }
+
+  .project-page .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-page .project-section-last {
+    padding-bottom: 48px;
+  }
+
+  .project-page .project-detail {
+    padding: 0;
+  }
+
+  .project-page .project-detail h3 {
+    font-size: var(--fs-20);
+  }
+
+  .project-page .project-section {
+    padding-top: calc(var(--space-24) + 4px);
+  }
+
+  .project-page .project-section h2 {
+    margin-bottom: var(--space-16);
+  }
+
+  .project-page .project-lead {
+    margin-bottom: var(--space-16);
+  }
+
+  .project-page .project-flow {
+    gap: var(--space-24);
+  }
+
+  .project-page .project-section--about .project-detail {
+    padding: 18px;
+    border-radius: 14px;
+  }
+}
+
+body.image-viewer-open {
+  overflow: hidden;
+}
+
+.project-page .project-image-block.is-zoomable {
+  cursor: zoom-in;
+}
+
+.project-page .project-image-block.is-zoomable:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(8, 8, 10, 0.86);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 180ms ease, visibility 180ms ease;
+}
+
+.image-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.image-lightbox-stage {
+  width: 100%;
+  max-width: min(1480px, 100%);
+  max-height: calc(100vh - 88px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 88px);
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+@media (pointer: fine) {
+  .project-page .project-image-block.is-zoomable,
+  .image-lightbox,
+  .image-lightbox * {
+    cursor: none;
+  }
+}
+
+@media (max-width: 799px) {
+  .image-lightbox {
+    padding: 14px;
+  }
+
+  .image-lightbox-stage,
+  .image-lightbox-image {
+    max-height: calc(100vh - 52px);
+  }
+}

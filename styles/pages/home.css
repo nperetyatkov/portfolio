@@ -169,6 +169,10 @@
   }
 }
 
+.about-inline-link {
+  font-weight: var(--fw-bold);
+}
+
 /* ============================= */
 /* Portfolio section             */
 /* ============================= */

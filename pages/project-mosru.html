@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ru" class="is-loading">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="preload"
+    href="../assets/fonts/InterVariable.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
+  <title>Mos.ru — кейс | nperetyatkov</title>
+  <meta
+    name="description"
+    content="Кейс Mos.ru: форма подписки на новости департаментов Правительства Москвы."
+  >
+  <style>
+    @media (pointer: fine) {
+      html,
+      body,
+      a,
+      button,
+      [role="button"] {
+        cursor: none;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+
+<body class="project-page" id="top">
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-top">
+        <a href="../index.html#top" class="brand brand-link">
+          <img
+            src="../assets/images/layout/header/brand-avatar.png"
+            alt="Avatar"
+            class="avatar"
+            width="32"
+            height="32"
+          />
+          <span class="logo">nperetyatkov</span>
+        </a>
+
+        <nav class="nav">
+          <a href="#" class="nav-resume">
+            Резюме
+            <svg
+              class="resume-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              width="18"
+              height="18"
+              aria-hidden="true"
+            >
+              <path
+                d="M7 17L17 7M17 7H9M17 7V15"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </nav>
+
+        <button class="burger" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="mobile-menu" aria-hidden="true">
+        <nav class="mobile-nav">
+          <a href="#" class="mobile-resume">
+            Резюме
+            <svg
+              class="resume-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              width="18"
+              height="18"
+              aria-hidden="true"
+            >
+              <path
+                d="M7 17L17 7M17 7H9M17 7V15"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="container">
+        <div class="project-hero-layout">
+          <div class="project-hero-media">
+            <img
+              src="../assets/images/pages/home/project-mosru.png"
+              alt="Кейс mos.ru"
+              width="800"
+              height="600"
+            />
+          </div>
+          <div class="project-hero-content">
+            <div class="project-hero-tags">
+              <span class="project-tag">UX/UI</span>
+              <span class="project-tag">Cross-platform</span>
+            </div>
+            <h1 class="project-hero-title">Mos.ru</h1>
+            <p class="project-hero-description">
+              Форма для сбора контактной информации
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-project" class="section project-section project-section--about">
+      <div class="container">
+        <h2>О проекте</h2>
+        <p class="project-lead">Это мое тестовое задание в ДИТ Правительства Москвы.</p>
+        <div class="project-grid">
+          <article class="project-detail">
+            <h3>Контекст</h3>
+            <p>
+              Нужно оформить форму для сбора контактной информации пользователей,
+              которые хотят подписаться на рассылку новостей конкретного департамента.
+            </p>
+          </article>
+          <article class="project-detail">
+            <h3>Задача</h3>
+            <p>Спроектировать удобную и понятную форму подписки, содержащую поля:</p>
+            <ul>
+              <li>ФИО</li>
+              <li>Email</li>
+              <li>Телефон</li>
+              <li>Департамент (выпадающий список)</li>
+              <li>Согласие на обработку данных (чекбокс)</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section project-section">
+      <div class="container">
+        <h2>Дискавери</h2>
+        <div class="project-flow">
+          <article class="project-detail">
+            <h3>Mos.ru</h3>
+            <p>
+              Учитывая задачу проекта, логично предположить, что форма будет
+              использоваться на сайте Правительства Москвы, в состав которого
+              входят департаменты. Поэтому первым делом я изучил сайт и
+              существующие формы.
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/mosru/discovery-mosru.png"
+                alt="Примеры мобильных форм и сценариев на mos.ru"
+                width="2376"
+                height="1584"
+              />
+            </figure>
+          </article>
+          <article class="project-detail">
+            <h3>Интернет-серфинг</h3>
+            <p>
+              Во время изучения mos.ru мне не удалось посмотреть, как в формах
+              работают поля для ввода личных данных, потому что они заполнялись
+              автоматически. Поэтому я дополнительно изучил, как с такими задачами
+              справляются другие сервисы и дизайнеры.
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/mosru/discovery-references.png"
+                alt="Референсы по обработке форм и ошибок"
+                width="2278"
+                height="1370"
+              />
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section project-section">
+      <div class="container">
+        <h2>Дизайн система</h2>
+        <p class="project-lead">
+          При проектировании я опирался на 3 ключевых принципа: простота,
+          предсказуемость и масштабируемость решения.
+        </p>
+        <div class="project-flow">
+          <article class="project-detail">
+            <h3>Шрифт</h3>
+            <p>
+              Использовал Golos Text (SemiBold, Medium, Regular). Для удобства
+              сохранил все вариации в стили и разделил их на 3 группы: Mobile,
+              Desktop и MultyPlatform.
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/mosru/design-font.png"
+                alt="Шрифтовая шкала для Mobile, Desktop и MultyPlatform"
+                width="1312"
+                height="972"
+              />
+            </figure>
+          </article>
+          <article class="project-detail">
+            <h3>Цвета</h3>
+            <p>
+              При проектировании воспользовался Variables. Этот подход позволяет
+              управлять цветами по смыслу, а не по значению и упрощает
+              масштабирование и поддержку интерфейса.
+            </p>
+            <p>
+              Базовые значения цветов сохранил в Primitives, а в Tokens использовал
+              семантические названия и ссылался на Primitives.
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/mosru/design-colors-primitives.png"
+                alt="Базовые цветовые примитивы"
+                width="1454"
+                height="1056"
+              />
+            </figure>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/mosru/design-tokens.png"
+                alt="Семантические цветовые токены"
+                width="1456"
+                height="942"
+              />
+            </figure>
+          </article>
+          <article class="project-detail">
+            <h3>Компоненты</h3>
+            <p>
+              Компонентная система построена по принципу постепенного усложнения и
+              разделена на три группы:
+            </p>
+            <ul>
+              <li>Primitives: базовые элементы интерфейса без контекста.</li>
+              <li>Components: собранные элементы с логикой и состояниями.</li>
+              <li>Templates: готовые пользовательские сценарии.</li>
+            </ul>
+            <p>
+              Такой подход позволяет переиспользовать элементы и масштабировать
+              систему под новые задачи и сервисы.
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/mosru/design-components.png"
+                alt="Компонентная структура: primitives, components, templates"
+                width="3056"
+                height="2332"
+              />
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section project-section">
+      <div class="container">
+        <h2>Макеты</h2>
+        <div class="project-flow">
+          <article class="project-detail">
+            <h3>Структура и порядок полей</h3>
+            <p>
+              Поле выбора департаментов вынесено в начало формы, чтобы пользователь
+              сразу понимал контекст подписки и только после этого вводил
+              персональные данные.
+            </p>
+            <p>Далее идут контактные данные:</p>
+            <ul>
+              <li>электронная почта для получения новостей;</li>
+              <li>ФИО для идентификации пользователя;</li>
+              <li>телефон для дополнительной идентификации.</li>
+            </ul>
+            <p>
+              Чекбокс согласия размещен перед кнопкой отправки как привычный и
+              ожидаемый паттерн для форм с персональными данными.
+            </p>
+            <p>
+              Также добавлен шаг подтверждения подписки: это снижает неопределенность
+              и дает уверенность, что действие выполнено успешно.
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/mosru/layout-research-patterns.png"
+                alt="Референсы по паттернам ввода и валидации"
+                width="1312"
+                height="972"
+              />
+            </figure>
+          </article>
+          <article class="project-detail">
+            <h3>Работа с состояниями и ошибками</h3>
+            <p>Форма спроектирована с учетом ключевых состояний:</p>
+            <ul>
+              <li>пустая;</li>
+              <li>с ошибками;</li>
+              <li>корректно заполненная.</li>
+            </ul>
+            <p>
+              Ошибки показываются локально над конкретным полем, адаптируются под
+              контекст и обозначаются сразу.
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/mosru/layout-states.png"
+                alt="Структура формы и ключевые состояния"
+                width="1312"
+                height="972"
+              />
+            </figure>
+          </article>
+          <article class="project-detail">
+            <h3>Поле «Департаменты»</h3>
+            <p>
+              Реализовано через выпадающий список с чекбоксами и строкой поиска.
+              Есть чекбокс для быстрого выделения и снятия выбора со всех пунктов.
+              По умолчанию выбран вариант «Все департаменты», чтобы исключить
+              незаполненное поле и сократить количество действий.
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/mosru/layout-departments.png"
+                alt="Вариант поля выбора департаментов"
+                width="1312"
+                height="972"
+              />
+            </figure>
+          </article>
+          <article class="project-detail">
+            <h3>Поля «Электронная почта» и «ФИО»</h3>
+            <p>
+              Изначально в полях установлены плейсхолдеры, которые помогают понять
+              формат ввода. После начала ввода над полем появляется подсказка, чтобы
+              требования оставались видимыми.
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/mosru/layout-email-fio.png"
+                alt="Состояния полей электронной почты и ФИО"
+                width="1312"
+                height="972"
+              />
+            </figure>
+          </article>
+          <article class="project-detail">
+            <h3>Поле «Телефон»</h3>
+            <p>
+              Используется маска ввода номера телефона: это сокращает количество
+              ошибок, облегчает заполнение и упрощает обработку данных на стороне
+              бизнеса.
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/mosru/layout-flow-states.png"
+                alt="Сценарий переходов между состояниями формы"
+                width="2080"
+                height="1541"
+              />
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section project-section">
+      <div class="container">
+        <h2>Прототип</h2>
+        <p class="project-lead">
+          Потыкать прототип в Figma можно
+          <a
+            class="project-inline-link"
+            href="https://www.figma.com/proto/bb7DBroY4zqTUD5rWjmeBI/%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9-%D0%9F%D0%B5%D1%80%D0%B5%D1%82%D1%8F%D1%82%D0%BA%D0%BE%D0%B2.-%D0%9A%D0%B5%D0%B9%D1%81-UX-UI-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD?page-id=1%3A3&amp;node-id=537-3187&amp;p=f&amp;viewport=787%2C793%2C0.28&amp;t=QgOrLI77r5p5Zu1c-1&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;starting-point-node-id=537%3A3187&amp;show-proto-sidebar=1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >здесь</a>.
+        </p>
+        <figure class="project-image-block">
+          <img
+            src="../assets/images/pages/projects/mosru/prototype-flow.png"
+            alt="Карта прототипа и сценариев формы"
+            width="2080"
+            height="1541"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section project-section">
+      <div class="container">
+        <h2>Итог</h2>
+        <p class="project-lead">
+          В результате получилась универсальная, простая и понятная форма
+          подписки, которая соответствует требованиям задания и может быть
+          легко встроена в существующую экосистему сайта Правительства Москвы.
+        </p>
+      </div>
+    </section>
+
+    <section class="section project-section">
+      <div class="container">
+        <h2>Что дальше</h2>
+        <p class="project-lead">
+          Следующий шаг — провести UX-исследования и юзабилити тесты, чтобы
+          проверить понятность формы, выявить ошибки и на основе данных повысить
+          удобство и конверсию подписки.
+        </p>
+      </div>
+    </section>
+
+    <section class="section project-section project-section-last">
+      <div class="container">
+        <h2>Другие проекты</h2>
+        <div class="portfolio">
+          <article class="project-card">
+            <a href="#" class="project-card-link">
+              <div class="project-card-media">
+                <img
+                  src="../assets/images/pages/home/project-multyne.png"
+                  alt="Проект Multyne"
+                  width="800"
+                  height="600"
+                />
+              </div>
+
+              <div class="project-card-content">
+                <div class="project-card-tags">
+                  <span class="project-tag">UX/UI</span>
+                  <span class="project-tag">Mobile</span>
+                </div>
+
+                <h3 class="project-card-title">Multyne</h3>
+                <p class="project-card-description">
+                  AI-помощник для создания креативного контента
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <a href="#" class="project-card-link">
+              <div class="project-card-media">
+                <img
+                  src="../assets/images/pages/home/project-start.png"
+                  alt="Проект START"
+                  width="800"
+                  height="600"
+                />
+              </div>
+
+              <div class="project-card-content">
+                <div class="project-card-tags">
+                  <span class="project-tag">UX/UI</span>
+                  <span class="project-tag">Desktop</span>
+                </div>
+
+                <h3 class="project-card-title">START</h3>
+                <p class="project-card-description">
+                  Семейная подписка в онлайн кинотеатре
+                </p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-shell">
+        <div class="footer-grid">
+          <div class="footer-left">
+            <p class="footer-copy">© Николай Перетятков, 2026</p>
+            <p class="footer-role">Продуктовый UX/UI-дизайнер, Москва</p>
+          </div>
+
+          <div class="footer-right">
+            <a href="#" class="nav-resume footer-resume">
+              Резюме
+              <svg
+                class="resume-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                width="18"
+                height="18"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 17L17 7M17 7H9M17 7V15"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+
+            <p class="footer-note">Сайт сделан с помощью вайб-кодинга</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <script type="module" src="../scripts/main.js"></script>
+  <noscript>
+    <p style="padding:16px;text-align:center">
+      Для корректной работы сайта требуется включённый JavaScript.
+    </p>
+  </noscript>
+</body>
+
+</html>

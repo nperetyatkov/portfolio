@@ -1,0 +1,87 @@
+export function initProjectImageViewer() {
+  const zoomableBlocks = Array.from(document.querySelectorAll('.project-page .project-image-block'));
+  if (!zoomableBlocks.length) return;
+
+  const lightbox = document.createElement('div');
+  lightbox.className = 'image-lightbox';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.setAttribute('aria-label', 'Просмотр изображения');
+
+  lightbox.innerHTML = `
+    <div class="image-lightbox-stage">
+      <img class="image-lightbox-image" alt="" />
+    </div>
+  `;
+
+  document.body.append(lightbox);
+
+  const lightboxImage = lightbox.querySelector('.image-lightbox-image');
+  const customCursor = document.querySelector('.cursor');
+  let lastActiveElement = null;
+
+  function openLightbox(sourceImage) {
+    if (!sourceImage) return;
+
+    lastActiveElement = document.activeElement;
+    lightboxImage.src = sourceImage.currentSrc || sourceImage.src;
+    lightboxImage.alt = sourceImage.alt || '';
+
+    lightbox.classList.add('is-open');
+    document.body.classList.add('image-viewer-open');
+    if (customCursor) {
+      customCursor.classList.add('cursor--hover');
+    }
+  }
+
+  function closeLightbox() {
+    if (!lightbox.classList.contains('is-open')) return;
+
+    lightbox.classList.remove('is-open');
+    document.body.classList.remove('image-viewer-open');
+    if (customCursor) {
+      customCursor.classList.remove('cursor--hover');
+    }
+
+    // Cleanup after animation frame to avoid showing stale image briefly.
+    window.setTimeout(() => {
+      if (!lightbox.classList.contains('is-open')) {
+        lightboxImage.removeAttribute('src');
+        lightboxImage.alt = '';
+      }
+    }, 180);
+
+    if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+      lastActiveElement.focus();
+    }
+  }
+
+  zoomableBlocks.forEach((block) => {
+    const img = block.querySelector('img');
+    if (!img) return;
+
+    block.classList.add('is-zoomable');
+    block.setAttribute('role', 'button');
+    block.setAttribute('tabindex', '0');
+    block.setAttribute('aria-label', `Открыть изображение: ${img.alt || 'без названия'}`);
+
+    block.addEventListener('click', () => {
+      openLightbox(img);
+    });
+
+    block.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openLightbox(img);
+      }
+    });
+  });
+
+  lightbox.addEventListener('click', closeLightbox);
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+}

@@ -1,9 +1,11 @@
 import { initMobileMenu } from './components/mobile-menu.js';
 import { initCursor } from './components/cursor.js';
+import { initProjectImageViewer } from './components/project-image-viewer.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   document.documentElement.classList.remove('is-loading');
   initMobileMenu();
+  initProjectImageViewer();
   initCursor();
 
   // Enforce cursor hiding at runtime (prevents browser repaint flicker)

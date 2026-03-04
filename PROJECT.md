@@ -8,6 +8,7 @@
 - Legacy-версия зафиксирована в `main` и не участвует в текущей разработке
 - Главная страница сверстана: `header`, `hero`, `about`, `projects`, `contact`, `footer`
 - Подключён базовый интерактив: мобильное меню, плавный скролл, кастомный курсор, копирование телефона на desktop/tablet
+- Добавлена страница кейса проекта: `pages/project-mosru.html` (единый шаблон под проекты)
 
 ## 3. Технологии
 - HTML5
@@ -31,13 +32,32 @@ portfolio/
 │       │   └── header/
 │       │       └── brand-avatar.png
 │       └── pages/                    — ресурсы, привязанные к страницам
-│           └── home/
+│           ├── home/
 │               ├── hero-photo.jpg
 │               ├── hero-photo1.jpg
 │               ├── hero-photo2.jpg
 │               ├── project-mosru.png
 │               ├── project-multyne.png
 │               └── project-start.png
+│           └── projects/
+│               └── mosru/
+│                   ├── mosru-cover.png
+│                   ├── mosru-preview.png
+│                   ├── discovery-mosru.png
+│                   ├── discovery-references.png
+│                   ├── design-tokens.png
+│                   ├── design-font.png
+│                   ├── design-colors-primitives.png
+│                   ├── design-components.png
+│                   ├── layout-states.png
+│                   ├── layout-research-patterns.png
+│                   ├── layout-flow-states.png
+│                   ├── layout-departments.png
+│                   ├── layout-email-fio.png
+│                   └── prototype-flow.png
+│
+├── pages/                            — HTML-страницы проектов
+│   └── project-mosru.html            — страница кейса проекта mos.ru
 │
 ├── styles/                           — стили проекта
 │   ├── main.css                      — единая точка подключения стилей
@@ -55,7 +75,8 @@ portfolio/
 │   │   ├── project-card.css          — карточки проектов и их адаптивные состояния
 │   │   └── cursor.css                — визуальная часть кастомного курсора
 │   └── pages/                        — стили конкретных страниц
-│       └── home.css                  — секции главной: hero, portfolio, contact
+│       ├── home.css                  — секции главной: hero, portfolio, contact
+│       └── project.css               — секции страниц проектов (общий шаблон)
 │
 └── scripts/                          — JavaScript-модули
     ├── main.js                       — входная точка: инициализация модулей и базовых сценариев
@@ -80,6 +101,7 @@ portfolio/
 - После каждого коммита сайт должен оставаться рабочим.
 - Рефакторинг и новая функциональность не смешиваются в одном коммите.
 - Любые заметные структурные изменения сначала коротко фиксируются в этом файле.
+- Для веса шрифта использовать только токены (`--fw-regular`, `--fw-medium`, `--fw-semibold`, `--fw-bold`); не использовать `font-variation-settings` и ручные значения вида `"wght" ...`.
 
 ## 7. Ориентир по дизайну
 Основной ориентир: https://nperetyatkov.figma.site

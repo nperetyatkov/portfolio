@@ -43,4 +43,14 @@
     height: 12px;
   }
 
+  body.image-viewer-open .cursor {
+    width: 32px;
+    height: 32px;
+  }
+
+  body.image-viewer-open .cursor.cursor--press {
+    width: 12px;
+    height: 12px;
+  }
+
 }
