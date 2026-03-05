@@ -4,8 +4,15 @@ export function initMobileMenu() {
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.mobile-menu');
   const brand = document.querySelector('.brand-link');
+  const mobileLinks = menu?.querySelectorAll('.mobile-nav a');
 
   if (!burger || !menu) return;
+
+  if (mobileLinks?.length) {
+    mobileLinks.forEach((link, index) => {
+      link.style.setProperty('--mobile-nav-index', String(index));
+    });
+  }
 
   /* ============================= */
   /* Helpers                       */

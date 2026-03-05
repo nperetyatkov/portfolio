@@ -184,6 +184,12 @@
   margin-top: var(--space-32);
 }
 
+@media (max-width: 1279px) {
+  .portfolio {
+    gap: 16px;
+  }
+}
+
 @media (max-width: 799px) {
   .portfolio {
     gap: 16px;
@@ -206,7 +212,7 @@
 .contact-card {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  gap: 24px;
 }
 
 .contact-link {
@@ -284,6 +290,10 @@
     padding-bottom: 64px;
   }
 
+  .contact-card {
+    gap: 16px;
+  }
+
   .contact-link-head {
     font-size: var(--fs-32);
     line-height: var(--lh-snug);
@@ -306,7 +316,7 @@
 
   .contact-card {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 16px;
   }
 
   .contact-link {

@@ -167,6 +167,12 @@
   transform: translateY(var(--pointer-y, 0));
   transition:
     opacity 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 460ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-dropdown-menu.is-pointer-initializing .nav-dropdown-pointer {
+  transition:
+    opacity 220ms cubic-bezier(0.22, 1, 0.36, 1),
     transform 0s linear;
 }
 
@@ -208,7 +214,10 @@
 
 .nav-dropdown-link {
   display: block;
-  padding: 8px 40px 8px 10px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 40px;
+  padding: 8px 0 8px 10px;
   border-radius: 10px;
   color: var(--color-text-secondary);
   text-decoration: none;
@@ -263,6 +272,7 @@
   display: none;
   width: 20px;
   height: 14px;
+  position: relative;
 
   padding: 5px 4px;
   box-sizing: content-box;
@@ -270,9 +280,6 @@
   border: none;
   background: none;
   cursor: pointer;
-
-  flex-direction: column;
-  justify-content: space-between;
 
   transition: transform var(--duration-fast) var(--ease-default);
 }
@@ -283,10 +290,25 @@
 
 .burger span {
   display: block;
-  height: 1.5px;
-  width: 100%;
-  background: var(--color-text-primary);
-  border-radius: 1px;
+  position: absolute;
+  left: 4px;
+  height: 2px;
+  width: 20px;
+  background: var(--color-text-secondary);
+  border-radius: 999px;
+  transform-origin: 50% 50%;
+}
+
+.burger span:nth-child(1) {
+  top: 5px;
+}
+
+.burger span:nth-child(2) {
+  top: 11px;
+}
+
+.burger span:nth-child(3) {
+  top: 17px;
 }
 
 /* ============================= */
@@ -299,7 +321,7 @@
   }
 
   .burger {
-    display: flex;
+    display: block;
   }
 }
 
@@ -351,12 +373,30 @@
 
   font-size: var(--fs-16);
   color: var(--color-text-secondary);
+  opacity: 0;
+  transform: translateY(10px);
+  transition-delay: 0ms;
 
   transition:
-    color var(--duration-fast) var(--ease-default),
-    transform var(--duration-fast) var(--ease-default);
+    opacity 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    color var(--duration-fast) var(--ease-default);
 
-  will-change: color, transform;
+  will-change: opacity, color, transform;
+}
+
+body.menu-open .mobile-menu .mobile-nav a {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(30ms + (var(--mobile-nav-index, 0) * 25ms));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav a {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .mobile-nav a::after {
@@ -386,6 +426,7 @@
 .mobile-nav .mobile-resume {
   font-weight: var(--fw-semibold);
   color: var(--color-text-primary);
+  margin-right: -2px;
 }
 
 .mobile-nav a.is-active::after {

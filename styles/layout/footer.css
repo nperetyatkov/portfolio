@@ -1,21 +1,20 @@
 .footer {
   position: relative;
-  padding-bottom: 32px;
+  padding-bottom: 0;
 }
 
 .footer::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 50%;
-  width: 100vw;
+  left: 0;
+  right: 0;
   height: 1px;
-  transform: translateX(-50%);
   background: #e1e1e1;
 }
 
 .footer-shell {
-  padding: 26px 0 8px;
+  padding: 26px 0;
 }
 
 .footer-grid {
@@ -49,23 +48,19 @@
   text-align: right;
 }
 
-@media (max-width: 1279px) {
-  .footer {
-    padding-bottom: 32px;
-  }
+.footer-resume {
+  margin-right: -2px;
+}
 
+@media (max-width: 1279px) {
   .footer-shell {
-    padding-top: 22px;
+    padding: 22px 0;
   }
 }
 
 @media (max-width: 799px) {
-  .footer {
-    padding-bottom: 24px;
-  }
-
   .footer-shell {
-    padding-top: 16px;
+    padding: 32px 0;
   }
 
   .footer-grid {
@@ -84,6 +79,7 @@
 
   .footer-right .nav-resume {
     justify-self: flex-start;
+    margin-right: 0;
   }
 
   .footer-note {

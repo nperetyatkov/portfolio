@@ -1,9 +1,11 @@
 import { initMobileMenu } from './components/mobile-menu.js';
 import { initCursor } from './components/cursor.js';
 import { initProjectImageViewer } from './components/project-image-viewer.js';
+import { initTypographyNoBreaks } from './components/typography.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   document.documentElement.classList.remove('is-loading');
+  initTypographyNoBreaks();
   initMobileMenu();
   initProjectImageViewer();
   initCursor();
@@ -312,12 +314,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const openDropdownMenu = () => {
       if (!navDropdownMenu) return;
       resolveActiveNavLinkByScroll();
+      navDropdownMenu.classList.add('is-pointer-initializing');
       navDropdownMenu.classList.add('is-open');
       navDropdownMenu.setAttribute('aria-hidden', 'false');
 
       window.requestAnimationFrame(() => {
         positionDropdownMenu();
         moveDropdownPointerToLink(activeNavLink);
+        window.requestAnimationFrame(() => {
+          navDropdownMenu.classList.remove('is-pointer-initializing');
+        });
       });
     };
 

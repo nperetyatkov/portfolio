@@ -75,7 +75,6 @@
 
 .project-page .project-lead {
   margin: 0 0 var(--space-24);
-  max-width: 78ch;
 }
 
 .project-page .project-section > .container > :last-child {
