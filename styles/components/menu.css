@@ -65,6 +65,196 @@
   transform: rotate(45deg);
 }
 
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  list-style: none;
+  color: var(--color-text-secondary);
+  transition: color var(--duration-fast) var(--ease-default);
+  will-change: color, transform;
+}
+
+.nav-dropdown-trigger:hover {
+  color: var(--color-text-primary);
+}
+
+.nav-dropdown-trigger:active {
+  color: var(--color-text-primary);
+  transform: translateY(1px);
+}
+
+.nav-dropdown[open] .nav-dropdown-trigger {
+  color: var(--color-text-primary);
+}
+
+.nav-dropdown-trigger::-webkit-details-marker {
+  display: none;
+}
+
+.nav-dropdown-trigger::marker {
+  content: "";
+}
+
+.nav-dropdown-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  transition: transform var(--duration-medium) var(--ease-default);
+}
+
+.nav-dropdown[open] .nav-dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  --dropdown-pointer-size: 22px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 130;
+  min-width: 228px;
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  text-align: right;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform-origin: top right;
+  transform: translate3d(0, -20px, 0) scale(0.86);
+  will-change: transform, opacity;
+  transition:
+    opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 420ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0s linear 420ms;
+}
+
+.nav-dropdown-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate3d(0, 0, 0) scale(1);
+  transition:
+    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 560ms cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0s linear 0s;
+}
+
+.nav-dropdown-menu .nav-dropdown-link {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-dropdown-menu .nav-dropdown-pointer {
+  opacity: 0;
+  transform: translateY(var(--pointer-y, 0));
+  transition:
+    opacity 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0s linear;
+}
+
+.nav-dropdown-menu.is-open .nav-dropdown-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-dropdown-menu.is-open .nav-dropdown-pointer {
+  opacity: 1;
+  transform: translateY(var(--pointer-y, 0));
+}
+
+.nav-dropdown-menu.is-open .nav-dropdown-link:nth-of-type(1) { transition-delay: 30ms; }
+.nav-dropdown-menu.is-open .nav-dropdown-link:nth-of-type(2) { transition-delay: 55ms; }
+.nav-dropdown-menu.is-open .nav-dropdown-link:nth-of-type(3) { transition-delay: 80ms; }
+.nav-dropdown-menu.is-open .nav-dropdown-link:nth-of-type(4) { transition-delay: 105ms; }
+.nav-dropdown-menu.is-open .nav-dropdown-link:nth-of-type(5) { transition-delay: 130ms; }
+.nav-dropdown-menu.is-open .nav-dropdown-link:nth-of-type(6) { transition-delay: 155ms; }
+.nav-dropdown-menu.is-open .nav-dropdown-link:nth-of-type(7) { transition-delay: 180ms; }
+.nav-dropdown-menu.is-open .nav-dropdown-link:nth-of-type(8) { transition-delay: 205ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-dropdown-menu {
+    transition: none;
+    transform: none;
+  }
+
+  .nav-dropdown-menu .nav-dropdown-link,
+  .nav-dropdown-menu .nav-dropdown-pointer {
+    transition: none;
+    opacity: 1;
+  }
+
+  .nav-dropdown-menu .nav-dropdown-link {
+    transform: none;
+  }
+}
+
+.nav-dropdown-link {
+  display: block;
+  padding: 8px 40px 8px 10px;
+  border-radius: 10px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  text-align: right;
+  line-height: 1.3;
+  transition:
+    color var(--duration-fast) var(--ease-default);
+}
+
+.nav-dropdown-link:hover {
+  color: var(--color-text-primary);
+}
+
+.nav-dropdown-link:active {
+  color: var(--color-text-primary);
+  transform: translateY(1px);
+}
+
+.nav-dropdown-link:focus-visible {
+  outline: 2px solid rgba(26, 26, 26, 0.28);
+  outline-offset: 1px;
+}
+
+.nav-dropdown-pointer {
+  position: absolute;
+  right: 22px;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--dropdown-pointer-size);
+  height: var(--dropdown-pointer-size);
+  font-size: 22px;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(var(--pointer-y, 0));
+  transition:
+    transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 160ms var(--ease-default);
+}
+
+.nav-dropdown-menu.is-pointer-visible .nav-dropdown-pointer {
+  opacity: 1;
+}
+
 /* ============================= */
 /* Burger Button                 */
 /* ============================= */
@@ -113,6 +303,13 @@
   }
 }
 
+@media (pointer: fine) {
+  .nav-dropdown-trigger,
+  .burger {
+    cursor: none;
+  }
+}
+
 /* ============================= */
 /* Burger → Cross                */
 /* ============================= */
@@ -138,15 +335,18 @@
 .mobile-nav {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   gap: 16px;
 
   margin-top: 20px;
+  padding-right: 4px;
+  text-align: right;
 }
 
 .mobile-nav a {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-end;
   gap: var(--space-4);
 
   font-size: var(--fs-16);
@@ -157,6 +357,17 @@
     transform var(--duration-fast) var(--ease-default);
 
   will-change: color, transform;
+}
+
+.mobile-nav a::after {
+  content: "";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-left: var(--space-4);
+  flex-shrink: 0;
 }
 
 .mobile-nav a:hover {
@@ -175,6 +386,10 @@
 .mobile-nav .mobile-resume {
   font-weight: var(--fw-semibold);
   color: var(--color-text-primary);
+}
+
+.mobile-nav a.is-active::after {
+  content: "👈";
 }
 
 .mobile-resume .resume-icon {

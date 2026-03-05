@@ -59,10 +59,14 @@
 }
 
 body.menu-open .mobile-menu {
-  max-height: 400px;
+  max-height: 520px;
   padding-top: 12px;
   padding-bottom: 12px;
   opacity: 1;
+}
+
+.project-page .header-inner {
+  overflow: visible;
 }
 
 /* ============================= */
@@ -96,5 +100,9 @@ body.menu-open .mobile-menu {
     margin: 0;
     padding: var(--space-12);
     border-radius: 28px;
+  }
+
+  .project-page .header-inner {
+    overflow: hidden;
   }
 }

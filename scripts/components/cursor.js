@@ -34,7 +34,7 @@ export function initCursor() {
     cursor.classList.remove("cursor--press");
   });
 
-  const interactiveElements = document.querySelectorAll("a, button, [role='button']");
+  const interactiveElements = document.querySelectorAll("a, button, summary, [role='button']");
 
   interactiveElements.forEach((el) => {
     el.addEventListener("mouseenter", () => {

@@ -46,6 +46,39 @@
         </a>
 
         <nav class="nav">
+          <details class="nav-dropdown">
+            <summary class="nav-dropdown-trigger">
+              Навигация
+              <svg
+                class="nav-dropdown-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                width="18"
+                height="18"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 10L12 15L17 10"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </summary>
+            <div class="nav-dropdown-menu" role="menu" aria-label="Навигация по кейсу">
+              <a href="#about-project" class="nav-dropdown-link" role="menuitem">О проекте</a>
+              <a href="#discovery" class="nav-dropdown-link" role="menuitem">Дискавери</a>
+              <a href="#design-system" class="nav-dropdown-link" role="menuitem">Дизайн система</a>
+              <a href="#layouts" class="nav-dropdown-link" role="menuitem">Макеты</a>
+              <a href="#prototype" class="nav-dropdown-link" role="menuitem">Прототип</a>
+              <a href="#result" class="nav-dropdown-link" role="menuitem">Итог</a>
+              <a href="#next-steps" class="nav-dropdown-link" role="menuitem">Что дальше</a>
+              <a href="#other-projects" class="nav-dropdown-link" role="menuitem">Другие проекты</a>
+              <span class="nav-dropdown-pointer" aria-hidden="true">👈</span>
+            </div>
+          </details>
+
           <a href="#" class="nav-resume">
             Резюме
             <svg
@@ -75,6 +108,14 @@
       </div>
       <div class="mobile-menu" aria-hidden="true">
         <nav class="mobile-nav">
+          <a href="#about-project">О проекте</a>
+          <a href="#discovery">Дискавери</a>
+          <a href="#design-system">Дизайн система</a>
+          <a href="#layouts">Макеты</a>
+          <a href="#prototype">Прототип</a>
+          <a href="#result">Итог</a>
+          <a href="#next-steps">Что дальше</a>
+          <a href="#other-projects">Другие проекты</a>
           <a href="#" class="mobile-resume">
             Резюме
             <svg
@@ -152,7 +193,7 @@
       </div>
     </section>
 
-    <section class="section project-section">
+    <section id="discovery" class="section project-section">
       <div class="container">
         <h2>Дискавери</h2>
         <div class="project-flow">
@@ -194,7 +235,7 @@
       </div>
     </section>
 
-    <section class="section project-section">
+    <section id="design-system" class="section project-section">
       <div class="container">
         <h2>Дизайн система</h2>
         <p class="project-lead">
@@ -274,7 +315,7 @@
       </div>
     </section>
 
-    <section class="section project-section">
+    <section id="layouts" class="section project-section">
       <div class="container">
         <h2>Макеты</h2>
         <div class="project-flow">
@@ -382,7 +423,7 @@
       </div>
     </section>
 
-    <section class="section project-section">
+    <section id="prototype" class="section project-section">
       <div class="container">
         <h2>Прототип</h2>
         <p class="project-lead">
@@ -405,7 +446,7 @@
       </div>
     </section>
 
-    <section class="section project-section">
+    <section id="result" class="section project-section">
       <div class="container">
         <h2>Итог</h2>
         <p class="project-lead">
@@ -416,7 +457,7 @@
       </div>
     </section>
 
-    <section class="section project-section">
+    <section id="next-steps" class="section project-section">
       <div class="container">
         <h2>Что дальше</h2>
         <p class="project-lead">
@@ -427,7 +468,7 @@
       </div>
     </section>
 
-    <section class="section project-section project-section-last">
+    <section id="other-projects" class="section project-section project-section-last">
       <div class="container">
         <h2>Другие проекты</h2>
         <div class="portfolio">
@@ -491,7 +532,7 @@
         <div class="footer-grid">
           <div class="footer-left">
             <p class="footer-copy">© Николай Перетятков, 2026</p>
-            <p class="footer-role">Продуктовый UX/UI-дизайнер, Москва</p>
+            <p class="footer-role">Продуктовый UX/UI дизайнер, Москва</p>
           </div>
 
           <div class="footer-right">
@@ -515,7 +556,7 @@
               </svg>
             </a>
 
-            <p class="footer-note">Сайт сделан с помощью вайб-кодинга</p>
+            <p class="footer-note">Сайт создан с помощью вайб-кодинга ☕️</p>
           </div>
         </div>
       </div>
