@@ -58,6 +58,8 @@ export function initProjectImageViewer() {
   }
 
   zoomableBlocks.forEach((block) => {
+    if (block.dataset.lightbox === 'off') return;
+
     const img = block.querySelector('img');
     if (!img) return;
 

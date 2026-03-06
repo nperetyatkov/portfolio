@@ -7,7 +7,10 @@
 - Рабочая ветка: `new-structure`
 - Legacy-версия зафиксирована в `main` и не участвует в текущей разработке
 - Главная страница сверстана: `header`, `hero`, `about`, `projects`, `contact`, `footer`
-- Добавлена и подключена страница кейса: `pages/project-mosru.html` (единый шаблон под проекты)
+- Добавлены и подключены страницы кейсов:
+  - `pages/project-mosru.html`
+  - `pages/project-start.html`
+  - единый шаблон под проекты (общие стили + единый интерактив)
 - Подключён интерактив:
   - мобильное меню + активное состояние ссылок в мобильной навигации;
   - плавный скролл к якорям (с учётом фиксированного хедера);
@@ -50,24 +53,41 @@ portfolio/
 │           │   ├── project-multyne.png
 │           │   └── project-start.png
 │           └── projects/
-│               └── mosru/
-│                   ├── mosru-cover.png
-│                   ├── mosru-preview.png
-│                   ├── discovery-mosru.png
-│                   ├── discovery-references.png
-│                   ├── design-tokens.png
-│                   ├── design-font.png
-│                   ├── design-colors-primitives.png
-│                   ├── design-components.png
-│                   ├── layout-states.png
-│                   ├── layout-research-patterns.png
-│                   ├── layout-flow-states.png
-│                   ├── layout-departments.png
-│                   ├── layout-email-fio.png
-│                   └── prototype-flow.png
+│               ├── mosru/
+│               │   ├── mosru-cover.png
+│               │   ├── mosru-preview.png
+│               │   ├── discovery-mosru.png
+│               │   ├── discovery-references.png
+│               │   ├── design-tokens.png
+│               │   ├── design-font.png
+│               │   ├── design-colors-primitives.png
+│               │   ├── design-components.png
+│               │   ├── layout-states.png
+│               │   ├── layout-research-patterns.png
+│               │   ├── layout-flow-states.png
+│               │   ├── layout-departments.png
+│               │   ├── layout-email-fio.png
+│               │   └── prototype-flow.png
+│               └── start/
+│                   ├── discovery-persona-olga.png
+│                   ├── discovery-cjm.png
+│                   ├── discovery-benchmark-kinopoisk.png
+│                   ├── discovery-reference-ivi-share.png
+│                   ├── flow-user.png
+│                   ├── flow-wire.png
+│                   ├── layout-notification.png
+│                   ├── layout-onboarding-benefits.png
+│                   ├── layout-onboarding-steps.png
+│                   ├── layout-settings-family.png
+│                   ├── layout-settings-subscriptions.png
+│                   ├── layout-invite-form.png
+│                   ├── layout-invite-success.png
+│                   ├── prototype-flow.png
+│                   └── result-sticker.png
 │
 ├── pages/                            — HTML-страницы проектов
-│   └── project-mosru.html            — страница кейса проекта mos.ru + `case-nav-data` (конфиг пунктов якорной навигации)
+│   ├── project-mosru.html            — страница кейса проекта mos.ru + `case-nav-data` (конфиг пунктов якорной навигации)
+│   └── project-start.html            — страница кейса проекта START + `case-nav-data` (конфиг пунктов якорной навигации)
 │
 ├── styles/                           — стили проекта
 │   ├── main.css                      — единая точка подключения стилей

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ru" class="is-loading">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="preload"
+    href="../assets/fonts/InterVariable.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
+  <title>START — кейс | nperetyatkov</title>
+  <meta
+    name="description"
+    content="Кейс START: семейная подписка в онлайн-кинотеатре."
+  >
+  <style>
+    @media (min-width: 800px) and (hover: hover) and (pointer: fine) {
+      html.has-custom-cursor,
+      html.has-custom-cursor body,
+      html.has-custom-cursor a,
+      html.has-custom-cursor button,
+      html.has-custom-cursor summary,
+      html.has-custom-cursor [role="button"] {
+        cursor: none;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+
+<body class="project-page" id="top">
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-top">
+        <a href="../index.html#top" class="brand brand-link">
+          <img
+            src="../assets/images/layout/header/brand-avatar.png"
+            alt="Avatar"
+            class="avatar"
+            width="32"
+            height="32"
+          />
+          <span class="logo">nperetyatkov</span>
+        </a>
+
+        <nav class="nav">
+          <details class="nav-dropdown">
+            <summary class="nav-dropdown-trigger">
+              Навигация
+              <svg
+                class="nav-dropdown-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                width="18"
+                height="18"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 10L12 15L17 10"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </summary>
+            <div class="nav-dropdown-menu" role="menu" aria-label="Навигация по кейсу">
+              <span class="nav-dropdown-pointer" aria-hidden="true">👈</span>
+            </div>
+          </details>
+
+          <a href="#" class="nav-resume">
+            Резюме
+            <svg
+              class="resume-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              width="18"
+              height="18"
+              aria-hidden="true"
+            >
+              <path
+                d="M7 17L17 7M17 7H9M17 7V15"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </nav>
+
+        <button class="burger" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="mobile-menu" aria-hidden="true">
+        <nav class="mobile-nav">
+          <a href="#" class="mobile-resume">
+            Резюме
+            <svg
+              class="resume-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              width="18"
+              height="18"
+              aria-hidden="true"
+            >
+              <path
+                d="M7 17L17 7M17 7H9M17 7V15"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="container">
+        <div class="project-hero-layout">
+          <div class="project-hero-media">
+            <img
+              src="../assets/images/pages/home/project-start.png"
+              alt="Кейс START"
+              width="800"
+              height="600"
+            />
+          </div>
+          <div class="project-hero-content">
+            <div class="project-hero-tags">
+              <span class="project-tag">UX/UI</span>
+              <span class="project-tag">Desktop</span>
+            </div>
+            <h1 class="project-hero-title">START</h1>
+            <p class="project-hero-description">
+              Семейная подписка в онлайн-кинотеатре
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-project" class="section project-section project-section--about">
+      <div class="container">
+        <h2>О проекте</h2>
+        <p class="project-lead">Немного вводных данных для понимания, что у нас тут происходит</p>
+        <div class="project-grid">
+          <article class="project-detail">
+            <h3>Компания</h3>
+            <p>
+              START — российский онлайн-кинотеатр, работающий по модели платной
+              подписки. В основе контента — фильмы и сериалы собственного
+              производства, а также отборный оригинальный контент других
+              онлайн-кинотеатров и хиты российского кинопроката.
+            </p>
+          </article>
+          <article class="project-detail">
+            <h3>Цель</h3>
+            <p>
+              Дать пользователям возможность делиться своей подпиской с близкими.
+              Для компании это возможность повлиять на отток пользователей.
+            </p>
+          </article>
+          <article class="project-detail">
+            <h3>Задачи</h3>
+            <ul>
+              <li>Сгенерировать идеи</li>
+              <li>Спроектировать десктоп решение</li>
+            </ul>
+          </article>
+          <article class="project-detail">
+            <h3>Целевая аудитория</h3>
+            <p>
+              Замужние женщины 30–45 лет, с высшим образованием и достатком
+              выше среднего, имеющие одного-двух детей
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="discovery" class="section project-section">
+      <div class="container">
+        <div class="project-flow">
+          <article id="persona" class="project-detail project-detail--persona">
+            <h2>Портрет персоны</h2>
+            <p>
+              На основе данных от заказчика и небольшого ресерча получилось
+              составить портрет типичного пользователя продукта.
+            </p>
+            <div class="project-grid project-grid--persona">
+              <div class="project-persona-card">
+                <figure class="project-persona-media">
+                  <img
+                    src="../assets/images/pages/projects/start/discovery-persona-olga.png"
+                    alt="Портрет персоны"
+                    width="381"
+                    height="479"
+                  />
+                </figure>
+                <ul class="project-persona-facts">
+                  <li><strong>Имя:</strong> Ольга, 35 лет</li>
+                  <li><strong>Семья:</strong> замужем, 2 ребенка (7 и 12 лет)</li>
+                  <li><strong>Профессия:</strong> бухгалтер в крупной компании</li>
+                  <li><strong>Доход:</strong> стабильный, выше среднего</li>
+                </ul>
+              </div>
+
+              <div class="project-detail project-persona-block">
+                <h3>Цели</h3>
+                <ul>
+                  <li>Найти семейный контент для вечеров вместе</li>
+                  <li>Безопасные и удобные детские разделы</li>
+                  <li>Возможность смотреть сериал/фильм на разных устройствах одновременно</li>
+                </ul>
+              </div>
+
+              <div class="project-detail project-persona-block">
+                <h3>Боли и барьеры</h3>
+                <ul>
+                  <li>Дети часто спорят, кто будет смотреть</li>
+                  <li>Нет времени разбираться в настройках</li>
+                  <li>Бесит, когда доступ ограничен 1–2 устройствами</li>
+                </ul>
+              </div>
+
+              <div class="project-detail project-persona-block">
+                <h3>Мотивация</h3>
+                <p>Ценит удобство и экономию, хочет, чтобы подписка работала «для всех сразу»</p>
+              </div>
+            </div>
+          </article>
+
+          <article id="customer-journey-map" class="project-detail">
+            <h2>Customer journey map</h2>
+            <p>Пообщался с пользователями онлайн-кинотеатров и построил CJM.</p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/start/discovery-cjm.png"
+                alt="Customer Journey Map для семейной подписки"
+                width="3590"
+                height="1244"
+              />
+            </figure>
+          </article>
+
+          <article id="benchmarking" class="project-detail">
+            <h2>Бенчмаркинг</h2>
+            <p>
+              Посмотрел, как с задачей реализации семейной подписки справились
+              ближайшие конкуренты, выделил по два основных поинта у каждого.
+            </p>
+            <h3>Кинопоиск</h3>
+            <p>
+              В личном кабинете есть целый раздел “Семья”, где расположена кнопка “Пригласить близкого”
+              и описаны возможности группы
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/start/layout-settings-family.png"
+                alt="Новый раздел Семья в настройках"
+                width="2080"
+                height="1104"
+              />
+            </figure>
+            <p>Есть несколько вариантов, как можно отправить приглашение</p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/start/benchmark-kinopoisk-invite-options.png"
+                alt="Варианты отправки приглашения"
+                width="3024"
+                height="1750"
+              />
+            </figure>
+            <h3>ИВИ</h3>
+            <p>Поделиться подпиской можно из главного меню личного кабинета</p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/start/benchmark-ivi-main-menu.png"
+                alt="Поделиться подпиской из главного меню личного кабинета"
+                width="1968"
+                height="1056"
+              />
+            </figure>
+            <p>Также есть возможность поделиться подпиской в разделе “Мои аккаунты”</p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/start/discovery-reference-ivi-share.png"
+                alt="Референс сценария шаринга подписки"
+                width="4096"
+                height="2880"
+              />
+            </figure>
+          </article>
+
+          <article id="ideas" class="project-detail">
+            <h2>Идеи</h2>
+            <p>На основе аудита я решил, что задачу можно решить за 3 шага</p>
+            <ul>
+              <li>Добавить раздел “Семья”, где можно управлять семейной подпиской и видеть всех участников</li>
+              <li>Добавить возможность приглашать в семейную подписку из раздела “Подписки”</li>
+              <li>Пошагово ознакомить пользователей с новой функцией</li>
+            </ul>
+          </article>
+
+          <article id="user-flow" class="project-detail">
+            <h2>User flow</h2>
+            <p>Прикинул пользовательский путь и обернул в блок-схему.</p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/start/flow-user.png"
+                alt="Схема user flow"
+                width="3556"
+                height="1864"
+              />
+            </figure>
+          </article>
+
+          <article id="wire-flow" class="project-detail">
+            <h2>Wire flow</h2>
+            <p>Накидал низкоуровневый дизайн задействованных экранов.</p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/start/flow-wire.png"
+                alt="Схема wire flow"
+                width="3444"
+                height="1862"
+              />
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="layouts" class="section project-section">
+      <div class="container">
+        <h2>Дизайн макеты</h2>
+        <p class="project-lead">
+          Наконец-то переходим к макетам.
+        </p>
+        <p>
+          Для реализации задачи были созданы новые экраны, а также использованы уже существующие.
+          При создании новых и доработке старых экранов были применены дизайн-система и UI-kit заказчика.
+        </p>
+        <p>
+          Ниже покажу и прокомментирую ключевые макеты.
+        </p>
+        <div class="project-flow">
+          <article class="project-detail">
+            <h3>Уведомление</h3>
+            <p>
+              При открытии сервиса пользователя встречает уведомление о появлении семейной подписки.
+              Тут же предлагаем ему узнать подробности.
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/start/layout-notification.png"
+                alt="Экран уведомления о семейной подписке"
+                width="3840"
+                height="2160"
+              />
+            </figure>
+          </article>
+
+          <article class="project-detail">
+            <h3>Онбординг</h3>
+            <p>
+              Оформил онбординг на двух экранах.
+              В первой части выделил 3 главных преимущества.
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/start/layout-onboarding-benefits.png"
+                alt="Онбординг: преимущества семейной подписки"
+                width="3840"
+                height="2160"
+              />
+            </figure>
+            <p>Во второй части показал инструкцию по отправке приглашения</p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/start/layout-invite-success.png"
+                alt="Подтверждение успешной отправки приглашения"
+                width="3840"
+                height="2160"
+              />
+            </figure>
+          </article>
+
+          <article class="project-detail">
+            <h3>Настройки</h3>
+            <p>
+              Создал новый раздел “Семья” в настройках.
+              Тут можно управлять группой и узнать о возможностях подписки.
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/start/layout-settings-subscriptions.png"
+                alt="Точка входа в семейную подписку из раздела Подписки"
+                width="3840"
+                height="2160"
+              />
+            </figure>
+            <p>
+              Также добавил кнопку “Пригласить близких” в существующий раздел настроек “Подписки”
+              для привлечения внимания и увеличения воронки
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/start/discovery-benchmark-kinopoisk.png"
+                alt="Референс личного кабинета онлайн-кинотеатра"
+                width="3840"
+                height="2160"
+              />
+            </figure>
+          </article>
+
+          <article class="project-detail">
+            <h3>Отправка приглашения</h3>
+            <p>
+              Добавил два варианта, как можно отправить приглашение: на телефон или почту
+            </p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/start/layout-invite-form.png"
+                alt="Форма отправки приглашения"
+                width="3840"
+                height="2160"
+              />
+            </figure>
+            <p>После отправки приглашения обязательно показываем пользователю, что действие выполнено</p>
+            <figure class="project-image-block">
+              <img
+                src="../assets/images/pages/projects/start/layout-onboarding-steps.png"
+                alt="Онбординг: инструкция по приглашению"
+                width="3840"
+                height="2160"
+              />
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="prototype" class="section project-section">
+      <div class="container">
+        <h2>Прототип</h2>
+        <p class="project-lead">
+          Потыкать прототип в Figma можно
+          <a
+            class="project-inline-link"
+            href="https://www.figma.com/proto/3hHmlITuDnwNq4uaTDETUh/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B5%D0%BC%D0%B5%D0%B8%CC%86%D0%BD%D0%BE%D0%B8%CC%86-%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%BA%D0%B8-%D0%B2-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B8%CC%86%D0%BD-%D0%BA%D0%B8%D0%BD%D0%BE%D1%82%D0%B5%D0%B0%D1%82%D1%80%D0%B5-START?page-id=190%3A2&amp;node-id=279-1286&amp;viewport=-1548%2C110%2C0.23&amp;t=AZD83ZeVPyjLvRF9-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=279%3A1286"
+            target="_blank"
+            rel="noopener noreferrer"
+          >здесь</a>.
+        </p>
+        <figure class="project-image-block">
+          <img
+            src="../assets/images/pages/projects/start/prototype-flow.png"
+            alt="Карта прототипа и сценариев семейной подписки"
+            width="2080"
+            height="1170"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section id="result" class="section project-section">
+      <div class="container">
+        <h2>Итог</h2>
+        <p class="project-lead">
+          Это был интересный проект, в ходе которого я:
+        </p>
+        <ul>
+          <li>описал портрет персоны</li>
+          <li>забенчмаркал конкурентов</li>
+          <li>построил CJM, User flow, Wire flow</li>
+          <li>сделал дизайн-макеты</li>
+          <li>анимировал кликабельный прототип</li>
+        </ul>
+        <p>
+          Это учебный проект, и никаких метрик нет, но можно предположить потенциальные
+          изменения после внедрения семейной подписки:
+        </p>
+        <ul>
+          <li>снизится отток пользователей</li>
+          <li>вырастет удержание</li>
+          <li>увеличится LTV</li>
+          <li>увеличится прирост новых подписчиков</li>
+        </ul>
+        <p>
+          Получается, задизайнено 👌
+        </p>
+        <figure class="project-image-block project-image-block--sticker" data-lightbox="off">
+          <img
+            src="../assets/images/pages/projects/start/result-sticker.png"
+            alt="Иллюстрация к финалу кейса"
+            width="900"
+            height="900"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section id="next-steps" class="section project-section">
+      <div class="container">
+        <h2>Что дальше</h2>
+        <p class="project-lead">
+          Теория это хорошо, но надо проверить решения на реальных пользователях.
+          Провести юзабилити тестирование, A/B-тесты и опросы.
+          И уже на основе результатов — дорабатывать, изменять или принимать другие решения.
+        </p>
+      </div>
+    </section>
+
+    <section id="other-projects" class="section project-section project-section-last">
+      <div class="container">
+        <h2>Другие проекты</h2>
+        <div class="portfolio">
+          <article class="project-card">
+            <a href="#" class="project-card-link">
+              <div class="project-card-media">
+                <img
+                  src="../assets/images/pages/home/project-multyne.png"
+                  alt="Проект Multyne"
+                  width="800"
+                  height="600"
+                />
+              </div>
+
+              <div class="project-card-content">
+                <div class="project-card-tags">
+                  <span class="project-tag">UX/UI</span>
+                  <span class="project-tag">Mobile</span>
+                </div>
+
+                <h3 class="project-card-title">Multyne</h3>
+                <p class="project-card-description">
+                  AI-помощник для создания креативного контента
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <a href="project-mosru.html" class="project-card-link">
+              <div class="project-card-media">
+                <img
+                  src="../assets/images/pages/home/project-mosru.png"
+                  alt="Проект Mos.ru"
+                  width="800"
+                  height="600"
+                />
+              </div>
+
+              <div class="project-card-content">
+                <div class="project-card-tags">
+                  <span class="project-tag">UX/UI</span>
+                  <span class="project-tag">Cross-platform</span>
+                </div>
+
+                <h3 class="project-card-title">Mos.ru</h3>
+                <p class="project-card-description">
+                  Форма для сбора контактной информации
+                </p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-shell">
+        <div class="footer-grid">
+          <div class="footer-left">
+            <p class="footer-copy">© Николай Перетятков, 2026</p>
+            <p class="footer-role">Продуктовый UX/UI дизайнер, Москва</p>
+          </div>
+
+          <div class="footer-right">
+            <a href="#" class="nav-resume footer-resume">
+              Резюме
+              <svg
+                class="resume-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                width="18"
+                height="18"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 17L17 7M17 7H9M17 7V15"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+
+            <p class="footer-note">Сайт создан с помощью вайб-кодинга ☕️</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <script id="case-nav-data" type="application/json">
+    [
+      { "id": "about-project", "label": "О проекте" },
+      { "id": "persona", "label": "Портрет персоны" },
+      { "id": "customer-journey-map", "label": "Customer journey map" },
+      { "id": "benchmarking", "label": "Бенчмаркинг" },
+      { "id": "ideas", "label": "Идеи" },
+      { "id": "user-flow", "label": "User flow" },
+      { "id": "wire-flow", "label": "Wire flow" },
+      { "id": "layouts", "label": "Дизайн макеты" },
+      { "id": "prototype", "label": "Прототип" },
+      { "id": "result", "label": "Итог" },
+      { "id": "next-steps", "label": "Что дальше" },
+      { "id": "other-projects", "label": "Другие проекты" }
+    ]
+  </script>
+  <script type="module" src="../scripts/main.js"></script>
+  <noscript>
+    <p style="padding:16px;text-align:center">
+      Для корректной работы сайта требуется включённый JavaScript.
+    </p>
+  </noscript>
+</body>
+
+</html>
