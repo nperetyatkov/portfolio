@@ -1,9 +1,9 @@
 export function initCursor() {
   const mediaQuery = window.matchMedia("(pointer: fine)");
-  if (!mediaQuery.matches) return;
+  if (!mediaQuery.matches) return false;
 
   const cursor = document.querySelector(".cursor");
-  if (!cursor) return;
+  if (!cursor) return false;
 
   let targetX = 0;
   let targetY = 0;
@@ -48,4 +48,5 @@ export function initCursor() {
   });
 
   animate();
+  return true;
 }

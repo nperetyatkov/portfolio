@@ -11,7 +11,7 @@
 }
 
 .project-page .project-hero-media {
-  background: #f5f5f5;
+  background: var(--color-surface-soft);
   border-radius: 24px;
   padding: 12px 12px 0;
   min-height: 432px;
@@ -32,7 +32,7 @@
 }
 
 .project-page .project-hero-content {
-  background: #f5f5f5;
+  background: var(--color-surface-soft);
   border-radius: 24px;
   padding: 32px;
   display: flex;
@@ -121,7 +121,7 @@
 
 .project-page .project-section--about .project-detail {
   border-radius: 18px;
-  background: #f5f5f5;
+  background: var(--color-surface-soft);
   padding: 22px;
 }
 
@@ -129,7 +129,7 @@
   margin: 0;
   border-radius: 18px;
   overflow: hidden;
-  background: #f5f5f5;
+  background: var(--color-surface-soft);
   margin-top: var(--space-16);
 }
 
@@ -184,7 +184,7 @@
     gap: 0;
     min-height: 360px;
     border-radius: 18px;
-    background: #f5f5f5;
+    background: var(--color-surface-soft);
     overflow: hidden;
   }
 
@@ -296,7 +296,7 @@ body.image-viewer-open {
   display: grid;
   place-items: center;
   padding: 24px;
-  background: rgba(8, 8, 10, 0.86);
+  background: var(--color-overlay-backdrop);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;

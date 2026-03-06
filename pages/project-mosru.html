@@ -18,11 +18,11 @@
   >
   <style>
     @media (pointer: fine) {
-      html,
-      body,
-      a,
-      button,
-      [role="button"] {
+      html.has-custom-cursor,
+      html.has-custom-cursor body,
+      html.has-custom-cursor a,
+      html.has-custom-cursor button,
+      html.has-custom-cursor [role="button"] {
         cursor: none;
       }
     }
@@ -67,14 +67,6 @@
               </svg>
             </summary>
             <div class="nav-dropdown-menu" role="menu" aria-label="Навигация по кейсу">
-              <a href="#about-project" class="nav-dropdown-link" role="menuitem">О проекте</a>
-              <a href="#discovery" class="nav-dropdown-link" role="menuitem">Дискавери</a>
-              <a href="#design-system" class="nav-dropdown-link" role="menuitem">Дизайн система</a>
-              <a href="#layouts" class="nav-dropdown-link" role="menuitem">Макеты</a>
-              <a href="#prototype" class="nav-dropdown-link" role="menuitem">Прототип</a>
-              <a href="#result" class="nav-dropdown-link" role="menuitem">Итог</a>
-              <a href="#next-steps" class="nav-dropdown-link" role="menuitem">Что дальше</a>
-              <a href="#other-projects" class="nav-dropdown-link" role="menuitem">Другие проекты</a>
               <span class="nav-dropdown-pointer" aria-hidden="true">👈</span>
             </div>
           </details>
@@ -108,14 +100,6 @@
       </div>
       <div class="mobile-menu" aria-hidden="true">
         <nav class="mobile-nav">
-          <a href="#about-project">О проекте</a>
-          <a href="#discovery">Дискавери</a>
-          <a href="#design-system">Дизайн система</a>
-          <a href="#layouts">Макеты</a>
-          <a href="#prototype">Прототип</a>
-          <a href="#result">Итог</a>
-          <a href="#next-steps">Что дальше</a>
-          <a href="#other-projects">Другие проекты</a>
           <a href="#" class="mobile-resume">
             Резюме
             <svg
@@ -564,6 +548,18 @@
   </footer>
 
   <div class="cursor" aria-hidden="true"></div>
+  <script id="case-nav-data" type="application/json">
+    [
+      { "id": "about-project", "label": "О проекте" },
+      { "id": "discovery", "label": "Дискавери" },
+      { "id": "design-system", "label": "Дизайн система" },
+      { "id": "layouts", "label": "Макеты" },
+      { "id": "prototype", "label": "Прототип" },
+      { "id": "result", "label": "Итог" },
+      { "id": "next-steps", "label": "Что дальше" },
+      { "id": "other-projects", "label": "Другие проекты" }
+    ]
+  </script>
   <script type="module" src="../scripts/main.js"></script>
   <noscript>
     <p style="padding:16px;text-align:center">

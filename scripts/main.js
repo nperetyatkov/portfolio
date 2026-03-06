@@ -4,15 +4,70 @@ import { initProjectImageViewer } from './components/project-image-viewer.js';
 import { initTypographyNoBreaks } from './components/typography.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  const initCaseNavigation = () => {
+    const configNode = document.getElementById('case-nav-data');
+    if (!configNode) return;
+
+    let navItems = [];
+    try {
+      const parsed = JSON.parse(configNode.textContent || '[]');
+      if (Array.isArray(parsed)) {
+        navItems = parsed.filter((item) => (
+          item
+          && typeof item.id === 'string'
+          && item.id.trim() !== ''
+          && typeof item.label === 'string'
+          && item.label.trim() !== ''
+        ));
+      }
+    } catch (error) {
+      console.error('Invalid case navigation config:', error);
+      return;
+    }
+
+    if (navItems.length === 0) return;
+
+    const desktopMenu = document.querySelector('.nav-dropdown-menu');
+    if (desktopMenu) {
+      const desktopMarkup = navItems
+        .map((item) => (
+          `<a href="#${item.id}" class="nav-dropdown-link" role="menuitem">${item.label}</a>`
+        ))
+        .join('');
+      desktopMenu.innerHTML = `${desktopMarkup}<span class="nav-dropdown-pointer" aria-hidden="true">👈</span>`;
+    }
+
+    const mobileNav = document.querySelector('.mobile-nav');
+    if (mobileNav) {
+      const mobileResume = mobileNav.querySelector('.mobile-resume');
+      const fragment = document.createDocumentFragment();
+
+      navItems.forEach((item) => {
+        const link = document.createElement('a');
+        link.href = `#${item.id}`;
+        link.textContent = item.label;
+        fragment.append(link);
+      });
+
+      mobileNav.querySelectorAll('a[href^="#"]:not(.mobile-resume)').forEach((link) => link.remove());
+      if (mobileResume) {
+        mobileNav.insertBefore(fragment, mobileResume);
+      } else {
+        mobileNav.append(fragment);
+      }
+    }
+  };
+
+  initCaseNavigation();
   document.documentElement.classList.remove('is-loading');
   initTypographyNoBreaks();
   initMobileMenu();
   initProjectImageViewer();
-  initCursor();
-
-  // Enforce cursor hiding at runtime (prevents browser repaint flicker)
-  document.documentElement.style.cursor = 'none';
-  document.body.style.cursor = 'none';
+  const isCursorActive = initCursor();
+  if (isCursorActive) {
+    // Enable cursor hiding only when custom cursor is actually initialized.
+    document.documentElement.classList.add('has-custom-cursor');
+  }
 
   // Smooth scroll for internal anchor links
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
