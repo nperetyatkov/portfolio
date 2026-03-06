@@ -62,8 +62,10 @@
 
   /* Motion */
   --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-apple-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-fast: 150ms;
   --duration-medium: 250ms;
+  --duration-slow: 420ms;
 
   /* Layout */
   --content-desktop: 1040px;

@@ -2,10 +2,6 @@
 /* Base                           */
 /* ============================= */
 
-html.is-loading body {
-  opacity: 0;
-}
-
 body {
   margin: 0;
   font-family: var(--font-family-base);
@@ -13,6 +9,36 @@ body {
   line-height: var(--lh-base);
   color: var(--color-text-primary);
   background: var(--color-bg-primary);
+}
+
+body > .header,
+body > main,
+body > .footer,
+body > .header .header-inner {
+  transition: opacity 420ms var(--ease-apple-soft);
+}
+
+html.is-loading body > .header {
+  opacity: 0;
+}
+
+html.is-loading body > main,
+html.is-loading body > .footer {
+  opacity: 0;
+}
+
+html.is-ready body > .header,
+html.is-ready body > main,
+html.is-ready body > .footer {
+  opacity: 1;
+}
+
+html.is-ready body > main {
+  transition-delay: 70ms;
+}
+
+html.is-ready body > .footer {
+  transition-delay: 120ms;
 }
 
 body.menu-open {
@@ -31,4 +57,14 @@ button:focus-visible,
   outline: 2px solid currentColor;
   outline-offset: 3px;
   border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body > .header,
+  body > main,
+  body > .footer,
+  body > .header .header-inner {
+    opacity: 1;
+    transition: none;
+  }
 }

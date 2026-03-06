@@ -59,7 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   initCaseNavigation();
-  document.documentElement.classList.remove('is-loading');
+  const rootElement = document.documentElement;
+  window.requestAnimationFrame(() => {
+    rootElement.classList.add('is-ready');
+    rootElement.classList.remove('is-loading');
+  });
   initTypographyNoBreaks();
   initMobileMenu();
   initProjectImageViewer();
