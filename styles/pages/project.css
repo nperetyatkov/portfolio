@@ -328,7 +328,7 @@ body.image-viewer-open {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 }
 
-@media (pointer: fine) {
+@media (min-width: 800px) and (hover: hover) and (pointer: fine) {
   .project-page .project-image-block.is-zoomable,
   .image-lightbox,
   .image-lightbox * {

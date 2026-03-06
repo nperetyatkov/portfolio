@@ -19,10 +19,6 @@
   will-change: color, transform;
 }
 
-.nav-link:hover {
-  color: var(--color-text-primary);
-}
-
 .nav-link:active {
   color: var(--color-text-primary);
   transform: translateY(1px);
@@ -61,10 +57,6 @@
   will-change: transform;
 }
 
-.nav-resume:hover .resume-icon {
-  transform: rotate(45deg);
-}
-
 .nav-dropdown {
   position: relative;
 }
@@ -77,10 +69,6 @@
   color: var(--color-text-secondary);
   transition: color var(--duration-fast) var(--ease-default);
   will-change: color, transform;
-}
-
-.nav-dropdown-trigger:hover {
-  color: var(--color-text-primary);
 }
 
 .nav-dropdown-trigger:active {
@@ -227,10 +215,6 @@
     color var(--duration-fast) var(--ease-default);
 }
 
-.nav-dropdown-link:hover {
-  color: var(--color-text-primary);
-}
-
 .nav-dropdown-link:active {
   color: var(--color-text-primary);
   transform: translateY(1px);
@@ -325,7 +309,23 @@
   }
 }
 
-@media (pointer: fine) {
+@media (min-width: 800px) and (hover: hover) and (pointer: fine) {
+  .nav-link:hover {
+    color: var(--color-text-primary);
+  }
+
+  .nav-resume:hover .resume-icon {
+    transform: rotate(45deg);
+  }
+
+  .nav-dropdown-trigger:hover {
+    color: var(--color-text-primary);
+  }
+
+  .nav-dropdown-link:hover {
+    color: var(--color-text-primary);
+  }
+
   .nav-dropdown-trigger,
   .burger {
     cursor: none;
@@ -410,13 +410,15 @@ body.menu-open .mobile-menu .mobile-nav a {
   flex-shrink: 0;
 }
 
-.mobile-nav a:hover {
-  color: var(--color-text-primary);
-}
-
 .mobile-nav a:active {
   color: var(--color-text-primary);
   transform: translateY(1px);
+}
+
+@media (min-width: 800px) and (hover: hover) and (pointer: fine) {
+  .mobile-nav a:hover {
+    color: var(--color-text-primary);
+  }
 }
 
 /* ============================= */

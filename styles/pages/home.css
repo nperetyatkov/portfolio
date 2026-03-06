@@ -254,7 +254,7 @@
   font-weight: var(--fw-semibold);
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (min-width: 800px) and (hover: hover) and (pointer: fine) {
   .contact-link:hover {
     transform: scale(1.018);
     background-color: #efefef;

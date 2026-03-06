@@ -1,5 +1,5 @@
 export function initCursor() {
-  const mediaQuery = window.matchMedia("(pointer: fine)");
+  const mediaQuery = window.matchMedia("(min-width: 800px) and (hover: hover) and (pointer: fine)");
   if (!mediaQuery.matches) return false;
 
   const cursor = document.querySelector(".cursor");

@@ -73,7 +73,7 @@
   margin: 0;
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (min-width: 800px) and (hover: hover) and (pointer: fine) {
   .project-card:hover {
     transform: scale(1.018);
     background-color: #efefef;
