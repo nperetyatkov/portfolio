@@ -14,14 +14,11 @@
   <title>nperetyatkov</title>
     <meta name="description" content="Николай Перетятков — портфолио продуктового дизайнера">
   <style>
-    @media (min-width: 800px) and (hover: hover) and (pointer: fine) {
+    @media (min-width: 800px) and (any-hover: hover) and (any-pointer: fine) {
       html.has-custom-cursor,
       html.has-custom-cursor body,
-      html.has-custom-cursor a,
-      html.has-custom-cursor button,
-      html.has-custom-cursor summary,
-      html.has-custom-cursor [role="button"] {
-        cursor: none;
+      html.has-custom-cursor * {
+        cursor: none !important;
       }
     }
   </style>

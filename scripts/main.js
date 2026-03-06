@@ -67,11 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTypographyNoBreaks();
   initMobileMenu();
   initProjectImageViewer();
-  const isCursorActive = initCursor();
-  if (isCursorActive) {
-    // Enable cursor hiding only when custom cursor is actually initialized.
-    document.documentElement.classList.add('has-custom-cursor');
-  }
+  initCursor();
 
   // Smooth scroll for internal anchor links
   const anchorLinks = document.querySelectorAll('a[href^="#"]');

@@ -503,7 +503,7 @@ body.image-viewer-open {
   }
 }
 
-@media (min-width: 800px) and (hover: hover) and (pointer: fine) {
+@media (min-width: 800px) and (any-hover: hover) and (any-pointer: fine) {
   .project-page .project-image-block.is-zoomable,
   .image-lightbox,
   .image-lightbox * {
