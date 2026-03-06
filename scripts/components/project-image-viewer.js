@@ -19,6 +19,7 @@ export function initProjectImageViewer() {
   const lightboxImage = lightbox.querySelector('.image-lightbox-image');
   const customCursor = document.querySelector('.cursor');
   let lastActiveElement = null;
+  const LIGHTBOX_CLOSE_ANIMATION_MS = 320;
 
   function openLightbox(sourceImage) {
     if (!sourceImage) return;
@@ -49,7 +50,7 @@ export function initProjectImageViewer() {
         lightboxImage.removeAttribute('src');
         lightboxImage.alt = '';
       }
-    }, 180);
+    }, LIGHTBOX_CLOSE_ANIMATION_MS);
 
     if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
       lastActiveElement.focus();
@@ -69,12 +70,36 @@ export function initProjectImageViewer() {
       openLightbox(img);
     });
 
+    block.addEventListener('pointerdown', () => {
+      block.classList.add('is-pressed');
+    });
+
+    const releasePressState = () => {
+      block.classList.remove('is-pressed');
+    };
+
+    block.addEventListener('pointerup', releasePressState);
+    block.addEventListener('pointercancel', releasePressState);
+    block.addEventListener('pointerleave', releasePressState);
+
     block.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        block.classList.add('is-pressed');
+      }
+
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
         openLightbox(img);
       }
     });
+
+    block.addEventListener('keyup', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        block.classList.remove('is-pressed');
+      }
+    });
+
+    block.addEventListener('blur', releasePressState);
   });
 
   lightbox.addEventListener('click', closeLightbox);

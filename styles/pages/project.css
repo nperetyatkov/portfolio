@@ -282,6 +282,18 @@ body.image-viewer-open {
 
 .project-page .project-image-block.is-zoomable {
   cursor: zoom-in;
+  transition: transform 180ms cubic-bezier(0.3, 0, 0.2, 1);
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.project-page .project-image-block.is-zoomable img {
+  transition: none;
+}
+
+.project-page .project-image-block.is-zoomable:active,
+.project-page .project-image-block.is-zoomable.is-pressed {
+  transform: scale(0.992);
 }
 
 .project-page .project-image-block.is-zoomable:focus-visible {
@@ -300,13 +312,18 @@ body.image-viewer-open {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 180ms ease, visibility 180ms ease;
+  transition:
+    opacity 220ms ease,
+    visibility 0s linear 220ms;
 }
 
 .image-lightbox.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  transition:
+    opacity 220ms ease,
+    visibility 0s linear 0s;
 }
 
 .image-lightbox-stage {
@@ -316,6 +333,16 @@ body.image-viewer-open {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transform: translateY(16px) scale(0.985);
+  transition:
+    opacity 220ms ease,
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.image-lightbox.is-open .image-lightbox-stage {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .image-lightbox-image {
@@ -326,6 +353,20 @@ body.image-viewer-open {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-page .project-image-block.is-zoomable,
+  .project-page .project-image-block.is-zoomable img,
+  .image-lightbox,
+  .image-lightbox-stage {
+    transition: none;
+  }
+
+  .image-lightbox-stage {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (min-width: 800px) and (hover: hover) and (pointer: fine) {
