@@ -21,12 +21,13 @@ export function initProjectImageViewer() {
   let lastActiveElement = null;
   const LIGHTBOX_CLOSE_ANIMATION_MS = 320;
 
-  function openLightbox(sourceImage) {
+  function openLightbox(sourceImage, sourceBlock) {
     if (!sourceImage) return;
 
     lastActiveElement = document.activeElement;
     lightboxImage.src = sourceImage.currentSrc || sourceImage.src;
     lightboxImage.alt = sourceImage.alt || '';
+    lightboxImage.classList.toggle('image-lightbox-image--white-frame', sourceBlock?.dataset.lightboxFrame === 'white');
 
     lightbox.classList.add('is-open');
     document.body.classList.add('image-viewer-open');
@@ -49,6 +50,7 @@ export function initProjectImageViewer() {
       if (!lightbox.classList.contains('is-open')) {
         lightboxImage.removeAttribute('src');
         lightboxImage.alt = '';
+        lightboxImage.classList.remove('image-lightbox-image--white-frame');
       }
     }, LIGHTBOX_CLOSE_ANIMATION_MS);
 
@@ -69,7 +71,7 @@ export function initProjectImageViewer() {
     block.setAttribute('aria-label', `Открыть изображение: ${img.alt || 'без названия'}`);
 
     block.addEventListener('click', () => {
-      openLightbox(img);
+      openLightbox(img, block);
     });
 
     block.addEventListener('pointerdown', () => {
@@ -91,7 +93,7 @@ export function initProjectImageViewer() {
 
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
-        openLightbox(img);
+        openLightbox(img, block);
       }
     });
 

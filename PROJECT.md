@@ -41,75 +41,20 @@ portfolio/
 │   │   ├── InterVariable.woff2
 │   │   └── InterVariable-Italic.woff2
 │   └── images/                       — изображения, сгруппированные по зонам
+│       ├── _archive/                 — архив текущей структуры и изображений (`assets/images`), не используется в коде
+│       │   ├── components/           — архив изображений UI-компонентов
+│       │   ├── layout/               — архив изображений общих layout-блоков
+│       │   └── pages/                — архив изображений страниц и кейсов
+│       ├── components/               — изображения UI-компонентов
+│       │   └── cards/                — изображения/ресурсы карточек
 │       ├── layout/                   — ресурсы для общих layout-блоков
-│       │   └── header/
-│       │       └── brand-avatar.png
+│       │   └── header/               — изображения хедера
 │       └── pages/                    — ресурсы, привязанные к страницам
-│           ├── home/
-│           │   ├── hero-photo.jpg
-│           │   ├── hero-photo1.jpg
-│           │   ├── hero-photo2.jpg
-│           │   ├── project-mosru.png
-│           │   ├── project-multyne.png
-│           │   └── project-start.png
-│           └── projects/
-│               ├── mosru/
-│               │   ├── mosru-cover.png
-│               │   ├── mosru-preview.png
-│               │   ├── discovery-mosru.png
-│               │   ├── discovery-references.png
-│               │   ├── design-tokens.png
-│               │   ├── design-font.png
-│               │   ├── design-colors-primitives.png
-│               │   ├── design-components.png
-│               │   ├── layout-states.png
-│               │   ├── layout-research-patterns.png
-│               │   ├── layout-flow-states.png
-│               │   ├── layout-departments.png
-│               │   ├── layout-email-fio.png
-│               │   └── prototype-flow.png
-│               ├── multyne/
-│               │   ├── hero-cover.png
-│               │   ├── discovery-chatgpt.png
-│               │   ├── discovery-sntx-tariffs.png
-│               │   ├── discovery-sntx-chat.png
-│               │   ├── discovery-sntx-history.png
-│               │   ├── discovery-cremo-paywall.png
-│               │   ├── discovery-cremo-tokens.png
-│               │   ├── discovery-cremo-settings.png
-│               │   ├── design-colors.png
-│               │   ├── design-font-pair.png
-│               │   ├── design-icons.png
-│               │   ├── layout-lowfi.png
-│               │   ├── layout-onboarding.png
-│               │   ├── layout-chat-main.png
-│               │   ├── layout-chat-prompts.png
-│               │   ├── layout-chat-settings.png
-│               │   ├── layout-chat-flow.png
-│               │   ├── layout-auth.png
-│               │   ├── layout-side-menu.png
-│               │   ├── layout-settings-main.png
-│               │   ├── layout-settings-tokens.png
-│               │   ├── layout-settings-presets.png
-│               │   ├── prototype-flow.png
-│               │   ├── result-sticker.png
-│               │   └── fun-fact-desktop.png
-│               └── start/
-│                   ├── discovery-persona-olga.png
-│                   ├── discovery-cjm.png
-│                   ├── discovery-benchmark-kinopoisk.png
-│                   ├── discovery-reference-ivi-share.png
-│                   ├── flow-user.png
-│                   ├── flow-wire.png
-│                   ├── layout-notification.png
-│                   ├── layout-onboarding-benefits.png
-│                   ├── layout-onboarding-steps.png
-│                   ├── layout-settings-family.png
-│                   ├── layout-settings-subscriptions.png
-│                   ├── layout-invite-form.png
-│                   ├── layout-invite-success.png
-│                   ├── prototype-flow.png
-│                   └── result-sticker.png
+│           ├── home/                 — изображения главной страницы
+│           └── projects/             — изображения страниц кейсов
+│               ├── mosru/            — материалы кейса `mos.ru`
+│               ├── multyne/          — материалы кейса `Multyne`
+│               └── start/            — материалы кейса `START`
 │
 ├── pages/                            — HTML-страницы проектов
 │   ├── project-multyne.html          — страница кейса проекта Multyne + `case-nav-data` (конфиг пунктов якорной навигации)
