@@ -118,6 +118,28 @@
   padding: 0;
 }
 
+.project-page .project-hypothesis {
+  margin-top: var(--space-16);
+  border-radius: 18px;
+  background: var(--color-surface-soft);
+  padding: 22px;
+}
+
+.project-page .project-hypothesis h4 {
+  margin: 0 0 var(--space-12);
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: var(--fw-bold);
+}
+
+.project-page .project-hypothesis ul {
+  margin: 0 0 0 1.2em;
+}
+
+.project-page .project-hypothesis li:last-child {
+  margin-bottom: 0;
+}
+
 .project-page .project-detail li {
   margin-bottom: 6px;
 }
@@ -376,6 +398,15 @@
   .project-page .project-section--about .project-detail {
     padding: 18px;
     border-radius: 14px;
+  }
+
+  .project-page .project-hypothesis {
+    border-radius: 14px;
+    padding: 18px;
+  }
+
+  .project-page .project-hypothesis h4 {
+    font-size: inherit;
   }
 
   .project-page .project-image-block--sticker {

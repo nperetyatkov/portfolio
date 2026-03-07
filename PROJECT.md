@@ -8,6 +8,7 @@
 - Legacy-версия зафиксирована в `main` и не участвует в текущей разработке
 - Главная страница сверстана: `header`, `hero`, `about`, `projects`, `contact`, `footer`
 - Добавлены и подключены страницы кейсов:
+  - `pages/project-multyne.html`
   - `pages/project-mosru.html`
   - `pages/project-start.html`
   - единый шаблон под проекты (общие стили + единый интерактив)
@@ -68,6 +69,32 @@ portfolio/
 │               │   ├── layout-departments.png
 │               │   ├── layout-email-fio.png
 │               │   └── prototype-flow.png
+│               ├── multyne/
+│               │   ├── hero-cover.png
+│               │   ├── discovery-chatgpt.png
+│               │   ├── discovery-sntx-tariffs.png
+│               │   ├── discovery-sntx-chat.png
+│               │   ├── discovery-sntx-history.png
+│               │   ├── discovery-cremo-paywall.png
+│               │   ├── discovery-cremo-tokens.png
+│               │   ├── discovery-cremo-settings.png
+│               │   ├── design-colors.png
+│               │   ├── design-font-pair.png
+│               │   ├── design-icons.png
+│               │   ├── layout-lowfi.png
+│               │   ├── layout-onboarding.png
+│               │   ├── layout-chat-main.png
+│               │   ├── layout-chat-prompts.png
+│               │   ├── layout-chat-settings.png
+│               │   ├── layout-chat-flow.png
+│               │   ├── layout-auth.png
+│               │   ├── layout-side-menu.png
+│               │   ├── layout-settings-main.png
+│               │   ├── layout-settings-tokens.png
+│               │   ├── layout-settings-presets.png
+│               │   ├── prototype-flow.png
+│               │   ├── result-sticker.png
+│               │   └── fun-fact-desktop.png
 │               └── start/
 │                   ├── discovery-persona-olga.png
 │                   ├── discovery-cjm.png
@@ -86,6 +113,7 @@ portfolio/
 │                   └── result-sticker.png
 │
 ├── pages/                            — HTML-страницы проектов
+│   ├── project-multyne.html          — страница кейса проекта Multyne + `case-nav-data` (конфиг пунктов якорной навигации)
 │   ├── project-mosru.html            — страница кейса проекта mos.ru + `case-nav-data` (конфиг пунктов якорной навигации)
 │   └── project-start.html            — страница кейса проекта START + `case-nav-data` (конфиг пунктов якорной навигации)
 │
