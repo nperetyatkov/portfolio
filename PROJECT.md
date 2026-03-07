@@ -22,6 +22,12 @@
   - авторасстановка неразрывных пробелов в тексте;
   - просмотр изображений кейса в lightbox (клик/Enter/Space, закрытие по `Esc`);
   - для изображений кейса добавлен `press`-эффект и плавная анимация открытия/закрытия lightbox (fade + scale/translate).
+- Ссылка на резюме подключена в `header` + `mobile menu` + `footer` на всех страницах:
+  - `https://drive.google.com/file/d/1b1cU3eUuWij1T8GxHsS6-HTpoBDSPTKB/view?usp=sharing`
+- Добавлены базовые SEO-файлы и метаданные для публикации:
+  - `robots.txt`
+  - `sitemap.xml` (с плейсхолдером домена `https://your-domain.example` для замены перед релизом)
+  - Open Graph + Twitter meta-теги в `index.html` и `pages/project-*.html`
 
 ## 3. Технологии
 - HTML5
@@ -35,6 +41,8 @@ portfolio/
 ├── index.html                        — основная разметка главной страницы
 ├── .gitignore                        — исключения для Git
 ├── PROJECT.md                        — контекст проекта, правила и карта структуры
+├── robots.txt                        — правила индексации для поисковых роботов + ссылка на sitemap
+├── sitemap.xml                       — карта страниц сайта для поисковых систем
 │
 ├── assets/                           — статические ресурсы
 │   ├── fonts/                        — локальные шрифты
