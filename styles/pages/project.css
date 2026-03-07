@@ -173,6 +173,12 @@
   border-radius: 0;
 }
 
+.project-page--multyne #discovery .project-image-block,
+.project-page--multyne #layouts .project-image-block,
+.project-page--multyne #fun-fact .project-image-block {
+  border: 1px solid var(--color-border-subtle);
+}
+
 .project-page .project-image-block + p,
 .project-page .project-image-block + ul,
 .project-page .project-image-block + h3 {
