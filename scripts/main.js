@@ -183,36 +183,74 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const phoneContactLink = document.querySelector('.contact-link-phone');
-  if (phoneContactLink) {
+  const initContactCopyLink = (selector, datasetKey, errorMessage) => {
+    const contactLink = document.querySelector(selector);
+    if (!contactLink) return;
+
     let copiedStateTimeoutId = null;
 
-    phoneContactLink.addEventListener('click', async (e) => {
+    contactLink.addEventListener('click', async (e) => {
       const isDesktopOrTablet = window.matchMedia('(min-width: 800px)').matches;
       if (!isDesktopOrTablet) return;
 
       e.preventDefault();
 
-      const phoneValue = phoneContactLink.dataset.phone;
-      if (!phoneValue || !navigator.clipboard) return;
+      const valueToCopy = contactLink.dataset[datasetKey];
+      if (!valueToCopy || !navigator.clipboard) return;
 
       try {
-        await navigator.clipboard.writeText(phoneValue);
-        phoneContactLink.classList.add('is-copied');
+        await navigator.clipboard.writeText(valueToCopy);
+        contactLink.classList.add('is-copied');
 
         if (copiedStateTimeoutId) {
           clearTimeout(copiedStateTimeoutId);
         }
 
         copiedStateTimeoutId = window.setTimeout(() => {
-          phoneContactLink.classList.remove('is-copied');
+          contactLink.classList.remove('is-copied');
           copiedStateTimeoutId = null;
         }, 1200);
       } catch (error) {
-        console.error('Failed to copy phone number:', error);
+        console.error(errorMessage, error);
       }
     });
-  }
+  };
+
+  initContactCopyLink('.contact-link-phone', 'phone', 'Failed to copy phone number:');
+  initContactCopyLink('.contact-link-email', 'email', 'Failed to copy email address:');
+
+  const initPressState = (selector) => {
+    const pressableElements = document.querySelectorAll(selector);
+    if (pressableElements.length === 0) return;
+
+    pressableElements.forEach((pressableElement) => {
+      let isPressActive = false;
+
+      const setPressedState = () => {
+        pressableElement.classList.add('is-pressed');
+        isPressActive = true;
+      };
+
+      const clearPressedState = () => {
+        if (!isPressActive) return;
+        pressableElement.classList.remove('is-pressed');
+        isPressActive = false;
+      };
+
+      pressableElement.addEventListener('pointerdown', setPressedState);
+      pressableElement.addEventListener('pointerup', clearPressedState);
+      pressableElement.addEventListener('pointercancel', clearPressedState);
+      pressableElement.addEventListener('pointerleave', clearPressedState);
+
+      pressableElement.addEventListener('touchstart', setPressedState, { passive: true });
+      pressableElement.addEventListener('touchend', clearPressedState, { passive: true });
+      pressableElement.addEventListener('touchcancel', clearPressedState, { passive: true });
+      pressableElement.addEventListener('blur', clearPressedState);
+    });
+  };
+
+  initPressState('.contact-link');
+  initPressState('.project-card');
 
   const setActiveMobileNavLink = (activeHash) => {
     if (mobileNavLinks.length === 0) return;

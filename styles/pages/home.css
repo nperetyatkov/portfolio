@@ -269,20 +269,25 @@
   }
 
   .contact-link-phone.is-copied .contact-link-value--default,
-  .contact-link-phone.is-copied .contact-link-value--hover {
+  .contact-link-phone.is-copied .contact-link-value--hover,
+  .contact-link-email.is-copied .contact-link-value--default,
+  .contact-link-email.is-copied .contact-link-value--hover {
     display: none;
   }
 
-  .contact-link-phone.is-copied .contact-link-value--copied {
+  .contact-link-phone.is-copied .contact-link-value--copied,
+  .contact-link-email.is-copied .contact-link-value--copied {
     display: block;
   }
 
 }
 
-.contact-link:active {
+.contact-link:active,
+.contact-link.is-pressed {
   transition-duration: 180ms;
   transition-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
   transform: scale(0.992);
+  background-color: #efefef;
 }
 
 @media (max-width: 1279px) {
