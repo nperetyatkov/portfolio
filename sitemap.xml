@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Replace https://your-domain.example with your production domain before release. -->
   <url>
-    <loc>https://your-domain.example/</loc>
+    <loc>https://nperetyatkov.ru/</loc>
   </url>
   <url>
-    <loc>https://your-domain.example/pages/project-multyne.html</loc>
+    <loc>https://nperetyatkov.ru/project-multyne/</loc>
   </url>
   <url>
-    <loc>https://your-domain.example/pages/project-mosru.html</loc>
+    <loc>https://nperetyatkov.ru/project-mosru/</loc>
   </url>
   <url>
-    <loc>https://your-domain.example/pages/project-start.html</loc>
+    <loc>https://nperetyatkov.ru/project-start/</loc>
   </url>
 </urlset>

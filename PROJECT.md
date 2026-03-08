@@ -7,9 +7,9 @@
 - Основная ветка разработки: `main`
 - Главная страница сверстана: `header`, `hero`, `about`, `projects`, `contact`, `footer`
 - Добавлены и подключены страницы кейсов:
-  - `pages/project-multyne.html`
-  - `pages/project-mosru.html`
-  - `pages/project-start.html`
+  - `project-multyne/index.html` (публичный URL: `/project-multyne/`)
+  - `project-mosru/index.html` (публичный URL: `/project-mosru/`)
+  - `project-start/index.html` (публичный URL: `/project-start/`)
   - единый шаблон под проекты (общие стили + единый интерактив)
 - Подключён интерактив:
   - мобильное меню + активное состояние ссылок в мобильной навигации;
@@ -26,8 +26,8 @@
   - `https://drive.google.com/file/d/1b1cU3eUuWij1T8GxHsS6-HTpoBDSPTKB/view?usp=sharing`
 - Добавлены базовые SEO-файлы и метаданные для публикации:
   - `robots.txt`
-  - `sitemap.xml` (с плейсхолдером домена `https://your-domain.example` для замены перед релизом)
-  - Open Graph + Twitter meta-теги в `index.html` и `pages/project-*.html`
+  - `sitemap.xml` (актуализирован под прод-домен `https://nperetyatkov.ru`)
+  - Open Graph + Twitter meta-теги в `index.html` и страницах кейсов
 
 ## 3. Технологии
 - HTML5
@@ -43,6 +43,12 @@ portfolio/
 ├── PROJECT.md                        — контекст проекта, правила и карта структуры
 ├── robots.txt                        — правила индексации для поисковых роботов + ссылка на sitemap
 ├── sitemap.xml                       — карта страниц сайта для поисковых систем
+├── project-multyne/                  — роут кейса Multyne
+│   └── index.html                    — страница кейса (URL: `/project-multyne/`)
+├── project-mosru/                    — роут кейса mos.ru
+│   └── index.html                    — страница кейса (URL: `/project-mosru/`)
+├── project-start/                    — роут кейса START
+│   └── index.html                    — страница кейса (URL: `/project-start/`)
 │
 ├── assets/                           — статические ресурсы
 │   ├── fonts/                        — локальные шрифты
@@ -59,11 +65,6 @@ portfolio/
 │               ├── mosru/            — материалы кейса `mos.ru`
 │               ├── multyne/          — материалы кейса `Multyne`
 │               └── start/            — материалы кейса `START`
-│
-├── pages/                            — HTML-страницы проектов
-│   ├── project-multyne.html          — страница кейса проекта Multyne + `case-nav-data` (конфиг пунктов якорной навигации)
-│   ├── project-mosru.html            — страница кейса проекта mos.ru + `case-nav-data` (конфиг пунктов якорной навигации)
-│   └── project-start.html            — страница кейса проекта START + `case-nav-data` (конфиг пунктов якорной навигации)
 │
 ├── styles/                           — стили проекта
 │   ├── main.css                      — единая точка подключения стилей
