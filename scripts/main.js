@@ -69,6 +69,105 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectImageViewer();
   initCursor();
 
+  const trackAnalyticsEvent = (eventName, params = {}) => {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params);
+    }
+
+    if (typeof window.ym === 'function') {
+      window.ym(107224695, 'reachGoal', eventName, params);
+    }
+  };
+
+  const getLinkPath = (link) => {
+    if (!link) return '';
+
+    try {
+      return new URL(link.href, window.location.origin).pathname;
+    } catch (error) {
+      return link.getAttribute('href') || '';
+    }
+  };
+
+  const getLinkHost = (link) => {
+    if (!link) return '';
+
+    try {
+      return new URL(link.href, window.location.origin).host;
+    } catch (error) {
+      return '';
+    }
+  };
+
+  const initClickTracking = () => {
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('a');
+      if (!link) return;
+
+      if (link.matches('.project-card-link')) {
+        const projectCard = link.closest('.project-card');
+        const projectName = projectCard?.querySelector('.project-card-title')?.textContent?.trim()
+          || getLinkPath(link);
+
+        trackAnalyticsEvent('click_project_card', {
+          project_name: projectName,
+          link_path: getLinkPath(link)
+        });
+        return;
+      }
+
+      if (link.matches('.about-inline-link')) {
+        trackAnalyticsEvent('click_about_link', {
+          link_host: getLinkHost(link),
+          link_path: getLinkPath(link)
+        });
+        return;
+      }
+
+      if (link.matches('.project-inline-link') && link.closest('#prototype')) {
+        trackAnalyticsEvent('click_prototype_link', {
+          project_slug: window.location.pathname.replace(/\//g, '') || 'home',
+          link_host: getLinkHost(link),
+          link_path: getLinkPath(link)
+        });
+        return;
+      }
+
+      if (link.matches('.contact-link')) {
+        let contactType = 'other';
+        if (link.classList.contains('contact-link-phone')) {
+          contactType = 'phone';
+        } else if (link.classList.contains('contact-link-email')) {
+          contactType = 'email';
+        } else if (link.href.startsWith('https://t.me/')) {
+          contactType = 'telegram';
+        }
+
+        trackAnalyticsEvent('click_contact', {
+          contact_type: contactType,
+          link_path: getLinkPath(link)
+        });
+        return;
+      }
+
+      if (link.matches('.nav-resume, .mobile-resume, .footer-resume')) {
+        let placement = 'header';
+        if (link.classList.contains('mobile-resume')) {
+          placement = 'mobile_menu';
+        } else if (link.classList.contains('footer-resume')) {
+          placement = 'footer';
+        }
+
+        trackAnalyticsEvent('click_resume', {
+          placement,
+          link_path: getLinkPath(link)
+        });
+      }
+    });
+  };
+
+  initClickTracking();
+
   // Smooth scroll for internal anchor links
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
   const pageHeader = document.querySelector('.header');
