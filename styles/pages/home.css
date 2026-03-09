@@ -45,7 +45,7 @@
 }
 
 .hero-greeting {
-  margin: 0 0 16px;
+  margin: 0 0 8px;
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.04em;
@@ -238,6 +238,17 @@
   line-height: var(--lh-tight);
 }
 
+.contact-link-phone .contact-link-head {
+  font-size: calc(var(--fs-40) * 0.88);
+}
+
+.contact-link-icon {
+  display: block;
+  width: 1em;
+  height: 1em;
+  object-fit: contain;
+}
+
 .contact-link-value {
   margin: 0;
   font-weight: var(--fw-regular);
@@ -302,6 +313,10 @@
   .contact-link-head {
     font-size: var(--fs-32);
     line-height: var(--lh-snug);
+  }
+
+  .contact-link-phone .contact-link-head {
+    font-size: calc(var(--fs-32) * 0.88);
   }
 
   .contact-link {
