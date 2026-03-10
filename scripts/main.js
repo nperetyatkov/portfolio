@@ -35,6 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
         ))
         .join('');
       desktopMenu.innerHTML = `${desktopMarkup}<span class="nav-dropdown-pointer" aria-hidden="true">👈</span>`;
+      const desktopLinks = desktopMenu.querySelectorAll('.nav-dropdown-link');
+      const lastDesktopIndex = desktopLinks.length - 1;
+
+      desktopLinks.forEach((link, index) => {
+        link.style.setProperty('--dropdown-index', String(index));
+        link.style.setProperty('--dropdown-reverse-index', String(lastDesktopIndex - index));
+      });
     }
 
     const mobileNav = document.querySelector('.mobile-nav');
@@ -453,6 +460,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const navDropdownMenu = navDropdown.querySelector('.nav-dropdown-menu');
     const navDropdownLinks = Array.from(navDropdown.querySelectorAll('.nav-dropdown-link'));
     const navDropdownPointer = navDropdown.querySelector('.nav-dropdown-pointer');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const DROPDOWN_LINK_STAGGER = 25;
+    const DROPDOWN_LINK_OPEN_DELAY = 30;
+    const DROPDOWN_LINK_EXIT_DURATION = 320;
     const navSectionItems = navDropdownLinks
       .map((link) => {
         const targetId = link.getAttribute('href');
@@ -463,6 +474,9 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .filter(Boolean);
     let activeNavLink = navSectionItems[0]?.link || null;
+    let closeDropdownTimeoutId = null;
+    let openDropdownPointerFrameId = null;
+    let openDropdownPointerTimeoutId = null;
 
     if (navDropdownMenu && navDropdownMenu.parentElement !== document.body) {
       document.body.appendChild(navDropdownMenu);
@@ -476,12 +490,52 @@ document.addEventListener('DOMContentLoaded', () => {
       navDropdownMenu.classList.remove('is-pointer-visible');
     };
 
+    const clearDropdownCloseTimeout = () => {
+      if (!closeDropdownTimeoutId) return;
+      window.clearTimeout(closeDropdownTimeoutId);
+      closeDropdownTimeoutId = null;
+    };
+
+    const clearOpenDropdownPointerSync = () => {
+      if (openDropdownPointerFrameId) {
+        window.cancelAnimationFrame(openDropdownPointerFrameId);
+        openDropdownPointerFrameId = null;
+      }
+
+      if (openDropdownPointerTimeoutId) {
+        window.clearTimeout(openDropdownPointerTimeoutId);
+        openDropdownPointerTimeoutId = null;
+      }
+    };
+
+    const getDropdownCloseDuration = () => {
+      if (prefersReducedMotion || navDropdownLinks.length === 0) return 0;
+      return ((navDropdownLinks.length - 1) * DROPDOWN_LINK_STAGGER) + DROPDOWN_LINK_OPEN_DELAY + DROPDOWN_LINK_EXIT_DURATION;
+    };
+
+    const updateDropdownMenuHeight = () => {
+      if (!navDropdownMenu) return;
+
+      const previousMaxHeight = navDropdownMenu.style.maxHeight;
+      navDropdownMenu.style.maxHeight = 'none';
+      const contentHeight = navDropdownMenu.scrollHeight + 24;
+      navDropdownMenu.style.maxHeight = previousMaxHeight;
+      navDropdownMenu.style.setProperty('--dropdown-menu-height', `${Math.ceil(contentHeight)}px`);
+    };
+
     const moveDropdownPointerToLink = (link) => {
       if (!navDropdownMenu || !navDropdownPointer || !link) return;
 
       const pointerHeight = navDropdownPointer.getBoundingClientRect().height || navDropdownPointer.offsetHeight;
       const pointerVisualNudge = -1;
-      const pointerY = link.offsetTop + (link.offsetHeight - pointerHeight) / 2 + pointerVisualNudge;
+      const currentPaddingTop = parseFloat(window.getComputedStyle(navDropdownMenu).paddingTop) || 0;
+      const openingPaddingCompensation = navDropdownMenu.classList.contains('is-pointer-initializing')
+        ? Math.max(12 - currentPaddingTop, 0)
+        : 0;
+      const pointerY = link.offsetTop
+        + openingPaddingCompensation
+        + (link.offsetHeight - pointerHeight) / 2
+        + pointerVisualNudge;
 
       navDropdownMenu.style.setProperty('--pointer-y', `${Math.max(pointerY, 0)}px`);
       navDropdownMenu.classList.add('is-pointer-visible');
@@ -505,25 +559,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const openDropdownMenu = () => {
       if (!navDropdownMenu) return;
+      clearDropdownCloseTimeout();
+      clearOpenDropdownPointerSync();
+      updateDropdownMenuHeight();
       resolveActiveNavLinkByScroll();
       navDropdownMenu.classList.add('is-pointer-initializing');
+      navDropdownMenu.classList.remove('is-closing');
       navDropdownMenu.classList.add('is-open');
       navDropdownMenu.setAttribute('aria-hidden', 'false');
 
-      window.requestAnimationFrame(() => {
+      openDropdownPointerFrameId = window.requestAnimationFrame(() => {
         positionDropdownMenu();
-        moveDropdownPointerToLink(activeNavLink);
-        window.requestAnimationFrame(() => {
+        openDropdownPointerFrameId = window.requestAnimationFrame(() => {
+          moveDropdownPointerToLink(activeNavLink);
           navDropdownMenu.classList.remove('is-pointer-initializing');
+          openDropdownPointerFrameId = null;
         });
       });
+
+      openDropdownPointerTimeoutId = window.setTimeout(() => {
+        if (!navDropdown.hasAttribute('open')) return;
+        updateDropdownMenuHeight();
+        positionDropdownMenu();
+        moveDropdownPointerToLink(activeNavLink);
+        openDropdownPointerTimeoutId = null;
+      }, 720);
     };
 
     const closeDropdownMenu = () => {
       if (!navDropdownMenu) return;
+      clearDropdownCloseTimeout();
+      clearOpenDropdownPointerSync();
       navDropdownMenu.classList.remove('is-open');
+      navDropdownMenu.classList.add('is-closing');
       navDropdownMenu.setAttribute('aria-hidden', 'true');
       hideDropdownPointer();
+
+      closeDropdownTimeoutId = window.setTimeout(() => {
+        navDropdownMenu.classList.remove('is-closing');
+        closeDropdownTimeoutId = null;
+      }, getDropdownCloseDuration());
     };
 
     const setActiveNavLink = (link, options = {}) => {
@@ -616,11 +691,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const repositionOpenDropdown = () => {
       if (navDropdown.hasAttribute('open') && navDropdownMenu?.classList.contains('is-open')) {
+        updateDropdownMenuHeight();
         positionDropdownMenu();
         moveDropdownPointerToLink(activeNavLink);
       }
     };
 
+    updateDropdownMenuHeight();
     window.addEventListener('resize', repositionOpenDropdown);
   }
 });
