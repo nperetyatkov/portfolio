@@ -216,11 +216,11 @@
 }
 
 .contact-link {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+  display: grid;
+  grid-template-rows: 40px auto;
+  justify-items: center;
+  align-content: center;
+  row-gap: 4px;
   min-height: 110px;
   padding: 20px;
   border-radius: 18px;
@@ -234,12 +234,21 @@
 
 .contact-link-head {
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 40px;
+  block-size: 40px;
   font-size: var(--fs-40);
-  line-height: var(--lh-tight);
+  line-height: 1;
 }
 
 .contact-link-phone .contact-link-head {
   font-size: calc(var(--fs-40) * 0.88);
+}
+
+.contact-link-phone .contact-link-text {
+  transform: translateY(2px);
 }
 
 .contact-link-icon {
@@ -255,40 +264,59 @@
   text-align: center;
 }
 
+.contact-link-text {
+  position: relative;
+  display: grid;
+  place-items: center;
+  inline-size: 100%;
+  min-block-size: calc(1.45em * var(--lh-base));
+}
+
+.contact-link-text > .contact-link-value {
+  grid-area: 1 / 1;
+  transition: opacity var(--duration-medium) var(--ease-apple-soft);
+}
+
 .contact-link-value--hover {
-  display: none;
   font-weight: var(--fw-semibold);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .contact-link-value--copied {
-  display: none;
   font-weight: var(--fw-semibold);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.contact-link-value--default {
+  opacity: 1;
 }
 
 @media (min-width: 800px) and (hover: hover) and (pointer: fine) {
   .contact-link:hover {
-    transform: scale(1.018);
+    transform: scale(1.030);
     background-color: #efefef;
   }
 
   .contact-link:hover .contact-link-value--default {
-    display: none;
+    opacity: 0;
   }
 
   .contact-link:hover .contact-link-value--hover {
-    display: block;
+    opacity: 1;
   }
 
   .contact-link-phone.is-copied .contact-link-value--default,
   .contact-link-phone.is-copied .contact-link-value--hover,
   .contact-link-email.is-copied .contact-link-value--default,
   .contact-link-email.is-copied .contact-link-value--hover {
-    display: none;
+    opacity: 0;
   }
 
   .contact-link-phone.is-copied .contact-link-value--copied,
   .contact-link-email.is-copied .contact-link-value--copied {
-    display: block;
+    opacity: 1;
   }
 
 }
@@ -311,8 +339,10 @@
   }
 
   .contact-link-head {
+    inline-size: 32px;
+    block-size: 32px;
     font-size: var(--fs-32);
-    line-height: var(--lh-snug);
+    line-height: 1;
   }
 
   .contact-link-phone .contact-link-head {
@@ -320,7 +350,12 @@
   }
 
   .contact-link {
+    grid-template-rows: 32px auto;
     min-height: 96px;
+  }
+
+  .contact-link-text {
+    min-block-size: calc(1.45em * var(--lh-snug));
   }
 
 }
@@ -340,10 +375,11 @@
   }
 
   .contact-link {
+    grid-template-rows: 32px auto;
     min-height: 96px;
     padding: 16px;
     border-radius: 14px;
-    gap: 8px;
+    row-gap: 4px;
   }
 
 }
