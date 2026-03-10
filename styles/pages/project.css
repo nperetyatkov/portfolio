@@ -449,6 +449,10 @@
     border-radius: 14px;
     padding: 18px;
   }
+
+  .project-page .project-mobile-break {
+    display: block;
+  }
 }
 
 body.image-viewer-open {
