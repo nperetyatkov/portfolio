@@ -70,7 +70,7 @@
 
 body.menu-open .mobile-menu,
 .mobile-menu.is-open {
-  max-height: 520px;
+  max-height: var(--mobile-menu-height, 520px);
   padding-top: 12px;
   padding-bottom: 12px;
   visibility: visible;

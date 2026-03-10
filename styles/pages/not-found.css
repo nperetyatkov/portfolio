@@ -1,0 +1,165 @@
+.not-found-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.not-found-page main {
+  flex: 1;
+  display: flex;
+}
+
+.not-found {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: 120px;
+  padding-bottom: 40px;
+}
+
+.not-found-layout {
+  display: block;
+}
+
+.not-found-copy {
+  max-width: 620px;
+}
+
+.not-found-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.not-found-title {
+  margin: 0;
+  font-size: clamp(88px, 16vw, 180px);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+}
+
+.not-found-emoji {
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.not-found-emoji--desktop {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  font-size: clamp(108px, 10vw, 164px);
+  line-height: 1;
+  transform: translateY(2px);
+}
+
+.not-found-emoji--mobile {
+  display: none;
+}
+
+.not-found-lead {
+  margin: 28px 0 0;
+  max-width: 520px;
+  font-size: var(--fs-32);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.not-found-text {
+  margin: 20px 0 0;
+  max-width: 520px;
+  color: var(--color-text-secondary);
+}
+
+.not-found-break-desktop {
+  display: inline;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 32px;
+}
+
+.not-found-pointer {
+  margin: 0 0 8px;
+  font-size: var(--fs-24);
+  line-height: 1;
+}
+
+.not-found-button {
+  display: inline-flex;
+  align-items: center;
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  transition: transform var(--duration-fast) var(--ease-default);
+}
+
+.not-found-button:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 1279px) {
+  .not-found {
+    padding-top: 120px;
+  }
+
+  .not-found-copy,
+  .not-found-lead,
+  .not-found-text {
+    max-width: none;
+  }
+
+  .not-found-title-row {
+    align-items: center;
+    gap: 12px;
+  }
+
+  .not-found-emoji--desktop {
+    display: none;
+  }
+
+  .not-found-emoji--mobile {
+    display: inline-block;
+    margin-top: 0;
+    font-size: clamp(76px, 13.8vw, 152px);
+    line-height: 1;
+    transform: translateY(2px);
+  }
+}
+
+@media (max-width: 799px) {
+  .not-found {
+    padding-top: 108px;
+    padding-bottom: 40px;
+  }
+
+  .not-found-title {
+    font-size: 88px;
+  }
+
+  .not-found-emoji--mobile {
+    font-size: 76px;
+    margin-top: 0;
+    transform: translateY(1px);
+  }
+
+  .not-found-lead {
+    margin-top: 20px;
+    font-size: var(--fs-24);
+    line-height: 1.18;
+  }
+
+  .not-found-text {
+    margin-top: 16px;
+  }
+
+  .not-found-actions {
+    margin-top: 24px;
+  }
+
+  .not-found-break-desktop {
+    display: none;
+  }
+}

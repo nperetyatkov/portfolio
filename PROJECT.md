@@ -11,6 +11,7 @@
 
 Состав production-сайта:
 - главная страница: `/`
+- кастомная страница 404: `/404.html`
 - кейс `Multyne`: `/project-multyne/`
 - кейс `mos.ru`: `/project-mosru/`
 - кейс `START`: `/project-start/`
@@ -27,6 +28,7 @@
 - просмотр изображений кейса в lightbox;
 - аналитика: Google Analytics 4 и Яндекс.Метрика;
 - SEO-база: `CNAME`, `robots.txt`, `sitemap.xml`, Open Graph и Twitter meta.
+- кастомная страница `404.html` для GitHub Pages.
 
 ## 3. Технологии
 - HTML5
@@ -40,6 +42,7 @@ portfolio/
 ├── .gitignore                        — исключения для Git
 ├── CNAME                             — кастомный домен GitHub Pages
 ├── PROJECT.md                        — описание текущего состояния проекта
+├── 404.html                          — кастомная страница ошибки для GitHub Pages
 ├── index.html                        — главная страница сайта
 ├── robots.txt                        — правила индексации и ссылка на sitemap
 ├── sitemap.xml                       — карта страниц сайта

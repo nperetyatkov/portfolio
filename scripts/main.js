@@ -461,8 +461,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const navDropdownLinks = Array.from(navDropdown.querySelectorAll('.nav-dropdown-link'));
     const navDropdownPointer = navDropdown.querySelector('.nav-dropdown-pointer');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const DROPDOWN_LINK_STAGGER = 25;
     const DROPDOWN_LINK_OPEN_DELAY = 30;
+    const DROPDOWN_LINK_STAGGER_SPAN = 180;
     const DROPDOWN_LINK_EXIT_DURATION = 320;
     const navSectionItems = navDropdownLinks
       .map((link) => {
@@ -483,6 +483,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (navDropdownMenu) {
       navDropdownMenu.setAttribute('aria-hidden', 'true');
+      const lastDropdownIndex = navDropdownLinks.length - 1;
+      const staggerStep = navDropdownLinks.length > 1
+        ? DROPDOWN_LINK_STAGGER_SPAN / lastDropdownIndex
+        : 0;
+
+      navDropdownMenu.style.setProperty('--dropdown-stagger-step', `${staggerStep.toFixed(2)}ms`);
     }
 
     const hideDropdownPointer = () => {
@@ -510,7 +516,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const getDropdownCloseDuration = () => {
       if (prefersReducedMotion || navDropdownLinks.length === 0) return 0;
-      return ((navDropdownLinks.length - 1) * DROPDOWN_LINK_STAGGER) + DROPDOWN_LINK_OPEN_DELAY + DROPDOWN_LINK_EXIT_DURATION;
+      return DROPDOWN_LINK_OPEN_DELAY + DROPDOWN_LINK_STAGGER_SPAN + DROPDOWN_LINK_EXIT_DURATION;
     };
 
     const updateDropdownMenuHeight = () => {
