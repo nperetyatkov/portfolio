@@ -27,6 +27,7 @@
 - авторасстановка неразрывных пробелов в текстовых блоках;
 - просмотр изображений кейса в lightbox;
 - аналитика: Google Analytics 4 и Яндекс.Метрика;
+- локальный opt-out аналитики через параметр `?analytics=off` с сохранением состояния в `localStorage`;
 - SEO-база: `CNAME`, `robots.txt`, `sitemap.xml`, Open Graph и Twitter meta.
 - кастомная страница `404.html` для GitHub Pages.
 
@@ -87,6 +88,7 @@ portfolio/
 │       ├── home.css                  — стили главной страницы
 │       └── project.css               — общий шаблон страниц кейсов
 └── scripts/                          — JavaScript-модули
+    ├── analytics.js                  — подключение GA4/Метрики и локальный opt-out аналитики
     ├── main.js                       — общая инициализация интерактива
     └── components/                   — независимые JS-компоненты
         ├── cursor.js                 — логика кастомного курсора
