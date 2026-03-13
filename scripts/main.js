@@ -106,25 +106,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  const getProjectSlugFromPath = (path) => {
+    switch (path) {
+      case '/project-multyne/':
+        return 'multyne';
+      case '/project-mosru/':
+        return 'mosru';
+      case '/project-start/':
+        return 'start';
+      default:
+        return '';
+    }
+  };
+
   const initClickTracking = () => {
     document.addEventListener('click', (event) => {
       const link = event.target.closest('a');
       if (!link) return;
 
       if (link.matches('.project-card-link')) {
+        const projectPath = getLinkPath(link);
+        const projectSlug = getProjectSlugFromPath(projectPath);
         const projectCard = link.closest('.project-card');
         const projectName = projectCard?.querySelector('.project-card-title')?.textContent?.trim()
-          || getLinkPath(link);
+          || projectPath;
 
-        trackAnalyticsEvent('click_project_card', {
+        if (!projectSlug) return;
+
+        trackAnalyticsEvent(`click_project_${projectSlug}`, {
           project_name: projectName,
-          link_path: getLinkPath(link)
+          link_path: projectPath
         });
         return;
       }
 
       if (link.matches('.about-inline-link')) {
-        trackAnalyticsEvent('click_about_link', {
+        trackAnalyticsEvent('click_photo_portfolio', {
           link_host: getLinkHost(link),
           link_path: getLinkPath(link)
         });
@@ -132,8 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (link.matches('.project-inline-link') && link.closest('#prototype')) {
-        trackAnalyticsEvent('click_prototype_link', {
-          project_slug: window.location.pathname.replace(/\//g, '') || 'home',
+        const projectSlug = getProjectSlugFromPath(window.location.pathname);
+        if (!projectSlug) return;
+
+        trackAnalyticsEvent(`click_prototype_${projectSlug}`, {
+          project_slug: projectSlug,
           link_host: getLinkHost(link),
           link_path: getLinkPath(link)
         });
@@ -141,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (link.matches('.contact-link')) {
-        let contactType = 'other';
+        let contactType = '';
         if (link.classList.contains('contact-link-phone')) {
           contactType = 'phone';
         } else if (link.classList.contains('contact-link-email')) {
@@ -150,7 +170,9 @@ document.addEventListener('DOMContentLoaded', () => {
           contactType = 'telegram';
         }
 
-        trackAnalyticsEvent('click_contact', {
+        if (!contactType) return;
+
+        trackAnalyticsEvent(`click_contact_${contactType}`, {
           contact_type: contactType,
           link_path: getLinkPath(link)
         });
