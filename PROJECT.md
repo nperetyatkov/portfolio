@@ -28,7 +28,7 @@
 - просмотр изображений кейса в lightbox;
 - аналитика: Google Analytics 4 и Яндекс.Метрика;
 - локальный opt-out аналитики через параметр `?analytics=off` с сохранением состояния в `localStorage`;
-- SEO-база: `CNAME`, `robots.txt`, `sitemap.xml`, Open Graph и Twitter meta.
+- SEO-база: `CNAME`, `robots.txt`, `sitemap.xml`, canonical, Open Graph, Twitter meta и JSON-LD (`Person`, `WebSite`) для главной страницы.
 - кастомная страница `404.html` для GitHub Pages.
 
 ## 3. Технологии
@@ -42,6 +42,8 @@
 portfolio/
 ├── .gitignore                        — исключения для Git
 ├── CNAME                             — кастомный домен GitHub Pages
+├── favicon.ico                       — favicon сайта в формате ICO в корне домена
+├── favicon.png                       — favicon сайта в формате PNG в корне домена
 ├── PROJECT.md                        — описание текущего состояния проекта
 ├── 404.html                          — кастомная страница ошибки для GitHub Pages
 ├── index.html                        — главная страница сайта
