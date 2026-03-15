@@ -11,46 +11,26 @@ export function initTypographyNoBreaks() {
     'PRE'
   ]);
   const SKIP_ANCESTOR_SELECTOR = 'a, button, summary, label, input, textarea, select';
-  const SHORT_CONNECTOR_WORDS = [
-    'а',
-    'без',
-    'в',
-    'во',
-    'для',
-    'до',
-    'и',
-    'из',
-    'изо',
-    'или',
-    'к',
-    'как',
-    'ко',
-    'на',
-    'над',
-    'не',
-    'но',
-    'о',
-    'об',
-    'обо',
-    'от',
-    'по',
-    'под',
-    'при',
-    'про',
-    'с',
-    'со',
-    'у',
-    'через'
-  ];
-  const shortWordPattern = `(?:${SHORT_CONNECTOR_WORDS.join('|')}|[A-Za-zА-Яа-яЁё]{1,2})`;
+  const SHORT_WORD_MAX_LENGTH = 3;
+  const shortWordPattern = `[\\p{L}]{1,${SHORT_WORD_MAX_LENGTH}}`;
+  const WORD_BOUNDARY_PREFIX = `(^|[\\s\\u00A0(\\[{«"'.,!?;:—–])`;
   const shortWordChainRegex = new RegExp(
-    `(^|[\\s\\u00A0(\\[{«"'])((?:(?:${shortWordPattern})\\s+){1,3})([\\p{L}\\p{N}][\\p{L}\\p{N}-]*)`,
+    `${WORD_BOUNDARY_PREFIX}((?:(?:${shortWordPattern})\\s+){1,3})([\\p{L}\\p{N}][\\p{L}\\p{N}-]*)`,
     'giu'
   );
   const shortConnectorRegex = new RegExp(
-    `(^|[\\s\\u00A0(\\[{«"'])(${shortWordPattern})\\s+`,
+    `${WORD_BOUNDARY_PREFIX}(${shortWordPattern})\\s+`,
     'giu'
   );
+  const numberWithNextWordRegex = new RegExp(
+    `${WORD_BOUNDARY_PREFIX}((?:№\\s*)?\\d[\\d.,\\-–—/]*)\\s+([\\p{L}][\\p{L}\\p{N}-]*)`,
+    'giu'
+  );
+  const numberWithPunctuationAndNextWordRegex = new RegExp(
+    `${WORD_BOUNDARY_PREFIX}((?:№\\s*)?\\d[\\d.,\\-–—/]*[,:;])\\s+([\\p{L}][\\p{L}\\p{N}-]*)`,
+    'giu'
+  );
+  const postfixParticleRegex = /([\p{L}\p{N}]+)-(то|либо|нибудь)(?=$|[^\p{L}\p{N}_])/giu;
   const trailingShortWordRegex = /(\S+)\s+([A-Za-zА-Яа-яЁё]{1,3}[.!?…»"]?)$/u;
 
   const applyTypographyRules = (value) => {
@@ -63,6 +43,9 @@ export function initTypographyNoBreaks() {
         return `${prefix}${normalizedShortChain}\u00A0${nextWord}`;
       });
       updated = updated.replace(shortConnectorRegex, '$1$2\u00A0');
+      updated = updated.replace(numberWithNextWordRegex, '$1$2\u00A0$3');
+      updated = updated.replace(numberWithPunctuationAndNextWordRegex, '$1$2\u00A0$3');
+      updated = updated.replace(postfixParticleRegex, '$1\u2060-\u2060$2');
     } while (updated !== value);
 
     return updated.replace(trailingShortWordRegex, '$1\u00A0$2');

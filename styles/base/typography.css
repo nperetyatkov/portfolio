@@ -52,8 +52,6 @@ p {
   line-height: var(--lh-base);
   margin: 0 0 var(--space-16);
   color: var(--color-text-primary);
-
-  overflow-wrap: break-word;
 }
 
 /* Secondary / meta text */
