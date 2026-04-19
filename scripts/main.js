@@ -114,6 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return 'mosru';
       case '/project-start/':
         return 'start';
+      case '/project-ui-concepts/':
+        return 'ui-concepts';
       default:
         return '';
     }

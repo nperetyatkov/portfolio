@@ -25,9 +25,20 @@ export function initProjectImageViewer() {
     if (!sourceImage) return;
 
     lastActiveElement = document.activeElement;
+    const lightboxMode = sourceBlock?.dataset.lightboxMode || '';
+    const isUiCaseLightbox = lightboxMode === 'ui-case';
+    const blockRect = sourceBlock?.getBoundingClientRect();
+    const imageRect = sourceImage.getBoundingClientRect();
+    const sourceImageWidthRatio = blockRect?.width ? Math.min(imageRect.width / blockRect.width, 1) : 1;
+    const sourceImageHeightRatio = blockRect?.height ? Math.min(imageRect.height / blockRect.height, 1) : 1;
+
+    lightbox.classList.toggle('image-lightbox--ui-case', isUiCaseLightbox);
     lightboxImage.src = sourceImage.currentSrc || sourceImage.src;
     lightboxImage.alt = sourceImage.alt || '';
     lightboxImage.classList.toggle('image-lightbox-image--white-frame', sourceBlock?.dataset.lightboxFrame === 'white');
+    lightboxImage.classList.toggle('image-lightbox-image--rounded', sourceBlock?.dataset.lightboxRounded === 'true');
+    lightbox.style.setProperty('--lightbox-source-image-width-ratio', sourceImageWidthRatio.toFixed(4));
+    lightbox.style.setProperty('--lightbox-source-image-height-ratio', sourceImageHeightRatio.toFixed(4));
 
     lightbox.classList.add('is-open');
     document.body.classList.add('image-viewer-open');
@@ -48,9 +59,13 @@ export function initProjectImageViewer() {
     // Cleanup after animation frame to avoid showing stale image briefly.
     window.setTimeout(() => {
       if (!lightbox.classList.contains('is-open')) {
+        lightbox.classList.remove('image-lightbox--ui-case');
         lightboxImage.removeAttribute('src');
         lightboxImage.alt = '';
         lightboxImage.classList.remove('image-lightbox-image--white-frame');
+        lightboxImage.classList.remove('image-lightbox-image--rounded');
+        lightbox.style.removeProperty('--lightbox-source-image-width-ratio');
+        lightbox.style.removeProperty('--lightbox-source-image-height-ratio');
       }
     }, LIGHTBOX_CLOSE_ANIMATION_MS);
 

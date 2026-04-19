@@ -173,6 +173,35 @@
   border-radius: 0;
 }
 
+.project-page--ui-concepts #ui-cases .project-image-block--ui-case {
+  --ui-case-image-height: calc(100% - 64px);
+  aspect-ratio: 16 / 9;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.project-page--ui-concepts #ui-cases .project-image-block--ui-case img {
+  width: auto;
+  height: var(--ui-case-image-height);
+  max-width: 100%;
+  max-height: none;
+  object-position: center;
+}
+
+.project-page--ui-concepts #ui-cases .project-image-block--coming-soon {
+  --ui-case-image-height: calc(100% - 64px);
+}
+
+.project-page--ui-concepts #ui-cases .project-image-block--coming-soon img {
+  width: min(100%, 320px);
+  height: auto;
+  max-width: min(100%, 320px);
+  border-radius: 18px;
+}
+
 .project-page--multyne #discovery .project-image-block,
 .project-page--multyne #layouts .project-image-block,
 .project-page--multyne #fun-fact .project-image-block {
@@ -423,6 +452,25 @@
     width: 150px;
   }
 
+  .project-page--ui-concepts #ui-cases .project-image-block--ui-case {
+    --ui-case-image-width: calc(100% - 48px);
+    aspect-ratio: 1 / 1;
+  }
+
+  .project-page--ui-concepts #ui-cases .project-image-block--ui-case img {
+    width: var(--ui-case-image-width);
+    height: auto;
+    max-width: none;
+    max-height: 100%;
+  }
+
+  .project-page--ui-concepts #ui-cases .project-image-block--coming-soon img {
+    width: min(320px, calc(100% - 48px));
+    max-width: min(320px, calc(100% - 48px));
+    max-height: none;
+    border-radius: 14px;
+  }
+
   .project-page .project-persona-card {
     border-radius: 14px;
     padding: 18px;
@@ -569,6 +617,11 @@ body.image-viewer-open {
 }
 
 @media (max-width: 799px) {
+  .project-page--ui-concepts #ui-cases .project-image-block--coming-soon img {
+    width: calc(100% - 48px);
+    max-width: calc(100% - 48px);
+  }
+
   .image-lightbox {
     padding: 14px;
   }
@@ -577,8 +630,73 @@ body.image-viewer-open {
     border-width: 16px;
   }
 
-  .image-lightbox-stage,
+  .image-lightbox-stage {
+    max-height: calc(100vh - 52px);
+  }
+
   .image-lightbox-image {
     max-height: calc(100vh - 52px);
+  }
+}
+
+.image-lightbox.image-lightbox--ui-case .image-lightbox-stage {
+  width: min(100%, calc((100vh - 88px) * (16 / 9)));
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  background: var(--color-surface-soft);
+}
+
+.image-lightbox.image-lightbox--ui-case .image-lightbox-image {
+  width: 100%;
+  max-width: 100%;
+  max-height: calc(100vh - 88px);
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: none;
+  padding: 32px 0;
+  box-sizing: border-box;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.image-lightbox.image-lightbox--ui-case .image-lightbox-image.image-lightbox-image--rounded {
+  width: calc(100% * var(--lightbox-source-image-width-ratio, 1));
+  max-width: calc(100% * var(--lightbox-source-image-width-ratio, 1));
+  height: auto;
+  max-height: calc(100% * var(--lightbox-source-image-height-ratio, 1));
+  aspect-ratio: auto;
+  padding: 0;
+  box-sizing: content-box;
+  border-radius: 16px;
+  clip-path: inset(0 round 16px);
+}
+
+@media (max-width: 799px) {
+  .image-lightbox.image-lightbox--ui-case .image-lightbox-stage {
+    width: calc(100vw - 28px);
+    max-width: calc(100vw - 28px);
+    max-height: none;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    background: var(--color-surface-soft);
+  }
+
+  .image-lightbox.image-lightbox--ui-case .image-lightbox-image {
+    width: calc(100% - 48px);
+    height: auto;
+    max-width: calc(100% - 48px);
+    max-height: 100%;
+    aspect-ratio: auto;
+    background: none;
+    padding: 0;
+    box-sizing: content-box;
+  }
+
+  .image-lightbox.image-lightbox--ui-case .image-lightbox-image.image-lightbox-image--rounded {
+    width: calc(100% - 48px);
+    max-width: calc(100% - 48px);
+    max-height: 100%;
+    border-radius: 14px;
+    clip-path: inset(0 round 14px);
   }
 }

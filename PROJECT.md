@@ -15,6 +15,7 @@
 - кейс `Multyne`: `/project-multyne/`
 - кейс `mos.ru`: `/project-mosru/`
 - кейс `START`: `/project-start/`
+- кейс `UI Concepts`: `/project-ui-concepts/`
 
 Подключено и используется в проде:
 - адаптивная вёрстка главной страницы и страниц кейсов;
@@ -55,6 +56,8 @@ portfolio/
 │   └── index.html                    — страница кейса `/project-multyne/`
 ├── project-start/                    — роут кейса START
 │   └── index.html                    — страница кейса `/project-start/`
+├── project-ui-concepts/              — роут кейса UI Concepts
+│   └── index.html                    — страница кейса `/project-ui-concepts/`
 ├── assets/                           — статические ресурсы
 │   ├── fonts/                        — локальные шрифты
 │   │   ├── InterVariable.woff2
@@ -70,7 +73,8 @@ portfolio/
 │           └── projects/             — материалы страниц кейсов
 │               ├── mosru/            — материалы кейса mos.ru
 │               ├── multyne/          — материалы кейса Multyne
-│               └── start/            — материалы кейса START
+│               ├── start/            — материалы кейса START
+│               └── ui-concepts/      — материалы кейса UI Concepts
 ├── styles/                           — стили проекта
 │   ├── main.css                      — единая точка подключения стилей
 │   ├── base/                         — глобальная база и дизайн-токены
